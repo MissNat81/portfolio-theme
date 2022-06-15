@@ -1,0 +1,88 @@
+.sticky {
+  display: block;
+}
+
+.post,
+.page {
+  margin: 0 0 1.5em;
+}
+
+.updated:not(.published) {
+  display: none;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 0;
+}
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/* Home Page */
+
+/* Hide the Home title */
+.page-id-7 h1 {
+  display: none;
+}
+
+// body {
+//   height: calc(100vh - 8em);
+//   padding: 4em;
+//   // color: rgba(255, 255, 255, 0.75);
+//   color: teal;
+//   // font-family: "Anonymous Pro", monospace;
+//   // background-color: rgb(25, 25, 25);
+// }
+
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 24rem;
+  // margin: 0 auto;
+  border-right: 2px solid rgba(2, 48, 58, 0.75);
+  font-size: 1rem;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+  color: teal;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 36rem;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(2, 48, 58, 0.75);
+    to {
+      border-right-color: transparent;
+    }
+  }
+}
+
+@media screen and (min-width: 37.5em) {
+  .line-1 {
+    font-size: 2rem;
+  }
+}
+/* Archive Projects Page */
+
+/* Single Projects Page */
+
+/* About Page */

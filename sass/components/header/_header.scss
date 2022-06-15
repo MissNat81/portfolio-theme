@@ -1,0 +1,40 @@
+/* Header */
+
+.site-header {
+  background-color: #f7f7f7;
+}
+
+.site-header a {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  //   font-weight: bold;
+}
+
+.site-branding {
+  padding: 1.25rem;
+}
+
+@media screen and (min-width: 37.5em) {
+  .site-branding {
+    // text-align: center;
+  }
+
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+  }
+
+  //   .site-header {
+  //     display: grid;
+  //     grid-template-columns: 1fr minmax(auto, 25rem) minmax(auto, 37.5rem) 1fr;
+  //     justify-content: center;
+  //   }
+
+  //   .site-branding {
+  //     grid-column: 2/3;
+  //     text-align: left;
+  //   }
+}
