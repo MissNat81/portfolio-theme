@@ -49,6 +49,7 @@ function portfolio_theme_setup() {
 		// Custom Image crop sizes
 		add_image_size('portrait-projects', 300, 200 );
 		add_image_size('portrait-medium-projects', 400, 300, true );
+		add_image_size('grid-projects', 400, 400, true);
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
@@ -199,7 +200,15 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 // Change the Excerpt Length 
 // Filter hooks always end with a return and always need at least 1 parameter
 function portfolio_excerpt_length( $length ) {
-		return 20;
+		return 14;
 	}
 	
 add_filter( 'excerpt_length', 'portfolio_excerpt_length', 999 );
+
+// Change the Excerpt Ending 
+function portfolio_excerpt_more ( $more ) {
+		$more = '<a href="'. get_permalink() .'"
+		class="learn-more"></a>';
+		return $more;
+}
+add_filter( 'excerpt_more', 'portfolio_excerpt_more' );

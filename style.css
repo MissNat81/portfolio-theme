@@ -403,6 +403,7 @@ h6 {
 	clear: both;
 	margin: 0.5em 0;
 	font-family: "Montserrat", sans-serif;
+	color: white;
 }
 
 h1 {
@@ -421,6 +422,7 @@ h3 {
 
 p {
 	margin-bottom: 1.5em;
+	color: white;
 }
 
 dfn,
@@ -474,8 +476,8 @@ big {
 /* Elements
 --------------------------------------------- */
 body {
-	background: #fff;
-	height: 100vh;
+	background: #14504f;
+	overflow-y: hidden;
 }
 
 hr {
@@ -539,13 +541,13 @@ a {
 	color: #4169e1;
 }
 a:visited {
-	color: #800080;
+	color: rgb(252, 132, 76);
 }
 a:hover, a:focus, a:active {
-	color: #191970;
+	color: #fc844c;
 }
 a:focus {
-	outline: thin dotted;
+	outline: none;
 }
 a:hover, a:active {
 	outline: 0;
@@ -640,16 +642,30 @@ textarea {
 /* Header */
 .site-header {
 	background-color: #f7f7f7;
+	background-color: #14504f;
+	width: 100%;
+}
+
+.site-title {
+	display: none;
+}
+
+.site-header img {
+	width: 75px;
+	height: 75px;
 }
 
 .site-header a {
+	display: inline-block;
+	position: relative;
 	text-decoration: none;
-	color: black;
+	color: white;
 	font-size: 1.5rem;
+	padding-top: 15px;
+	margin: 1rem;
 }
-
-.site-branding {
-	padding: 1.25rem;
+.site-header a:last-child {
+	margin-right: 20px;
 }
 
 @media screen and (min-width: 37.5em) {
@@ -657,7 +673,11 @@ textarea {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		padding: 1.25rem 2.5rem;
+	}
+	.site-header img {
+		width: 100px;
+		height: 100px;
+		margin-left: 25px;
 	}
 }
 /* Navigation
@@ -668,7 +688,7 @@ textarea {
 
 @media screen and (min-width: 37.5em) {
 	.main-navigation {
-		display: block;
+		display: inline-block;
 		font-family: "Montserrat", sans-serif;
 	}
 	.main-navigation ul {
@@ -676,9 +696,55 @@ textarea {
 		list-style: none;
 		margin-bottom: 0;
 	}
+	.main-navigation li {
+		position: relative;
+	}
 	.main-navigation a {
+		display: inline-block;
+		position: relative;
 		text-decoration: none;
-		padding: 1rem;
+		padding: 15px;
+		padding-right: 10px;
+		margin-right: 10px;
+		border: none;
+	}
+	.main-navigation a:after {
+		background: none repeat scroll 0 0 transparent;
+		bottom: 0;
+		content: "";
+		display: block;
+		height: 4px;
+		left: 50%;
+		position: absolute;
+		background: #fc844c;
+		transition: width 0.3s ease 0s, left 0.3s ease 0s;
+		width: 0;
+	}
+	.main-navigation a:hover:after,
+.main-navigation a:active:after {
+		width: 100%;
+		left: 0;
+	}
+	.main-navigation a {
+		background-image: linear-gradient(to right, #fc844c, #fc844c 50%, #fff 50%);
+		background-size: 200% 100%;
+		background-position: -100%;
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		transition: all 0.3s ease-in-out;
+	}
+	.main-navigation a:before {
+		content: "";
+		background: #fc844c;
+		display: block;
+		position: absolute;
+		bottom: -3px;
+		left: 0;
+		width: 0;
+		height: 3px;
+	}
+	.main-navigation a:hover {
+		background-position: 0;
 	}
 }
 .site-main .comment-navigation,
@@ -735,65 +801,226 @@ textarea {
 	display: none;
 }
 
-.line-1 {
-	position: relative;
-	top: 50%;
-	width: 24rem;
-	border-right: 2px solid rgba(2, 48, 58, 0.75);
-	font-size: 1rem;
-	text-align: left;
-	white-space: nowrap;
-	overflow: hidden;
-	transform: translateY(-50%);
-	color: teal;
+.animated {
+	font-size: 1.5rem;
+	padding: 1rem;
 }
 
 /* Animation */
-.anim-typewriter {
-	-webkit-animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
-	        animation: typewriter 4s steps(44) 1s 1 normal both, blinkTextCursor 500ms steps(44) infinite normal;
-}
-
-@-webkit-keyframes typewriter {
-	from {
-		width: 0;
-	}
-	to {
-		width: 36rem;
-	}
-}
-
-@keyframes typewriter {
-	from {
-		width: 0;
-	}
-	to {
-		width: 36rem;
-	}
-}
-@-webkit-keyframes blinkTextCursor {
-	from {
-		border-right-color: rgba(2, 48, 58, 0.75);
-		to {
-			border-right-color: transparent;
-		}
-	}
-}
-@keyframes blinkTextCursor {
-	from {
-		border-right-color: rgba(2, 48, 58, 0.75);
-		to {
-			border-right-color: transparent;
-		}
-	}
-}
 @media screen and (min-width: 37.5em) {
-	.line-1 {
-		font-size: 2rem;
+	.animated {
+		font-size: 4rem;
 	}
 }
 /* Archive Projects Page */
+.archive .page-title {
+	text-align: center;
+	margin-top: 4rem;
+}
+
+/* Animate h1*/
+.waviy h1 {
+	-webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+	font-size: 1.75rem;
+	text-align: center;
+}
+
+.waviy span {
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	-webkit-animation: waviy 1s infinite;
+	        animation: waviy 1s infinite;
+	-webkit-animation-delay: calc(0.1s * var(--i));
+	        animation-delay: calc(0.1s * var(--i));
+}
+
+@-webkit-keyframes waviy {
+	0%, 40%, 100% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-20px);
+	}
+}
+
+@keyframes waviy {
+	0%, 40%, 100% {
+		transform: translateY(0);
+	}
+	20% {
+		transform: translateY(-20px);
+	}
+}
+/** Grid option 1 - Square */
+.projects {
+	display: grid;
+	text-align: center;
+	width: 100%;
+	max-width: 900px;
+	margin: 5% auto;
+	grid-template-columns: 1fr;
+	grid-gap: 25px;
+}
+
+.project-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.project-item a {
+	text-decoration: none;
+	color: white;
+}
+
+.project-item h2 {
+	text-align: center;
+	font-size: 1rem;
+}
+
+.project-item img {
+	width: 250px;
+	min-height: 250px;
+	padding: 15px;
+	border-radius: 25px;
+}
+
+@media screen and (min-width: 37.5em) {
+	.waviy h1 {
+		font-size: 2.75rem;
+	}
+	.projects {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: 1fr 1fr;
+	}
+	.project-item img {
+		width: 300px;
+		height: 300px;
+	}
+}
+@media screen and (min-width: 50rem) {
+	.waviy h1 {
+		font-size: 3rem;
+	}
+	.project-item img {
+		width: 400px;
+		height: 400px;
+	}
+	.project-item h2 {
+		font-size: 2.5rem;
+	}
+	/* Hover effect over project cards */
+	.content {
+		position: relative;
+		max-width: 400px;
+		margin: auto;
+		overflow: hidden;
+	}
+	.content .content-overlay {
+		background: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		opacity: 0;
+		transition: all 0.4s ease-in-out 0s;
+		border-radius: 25px;
+	}
+	.content:hover .content-overlay {
+		opacity: 1;
+	}
+	.content-details {
+		position: absolute;
+		text-align: center;
+		padding-left: 1em;
+		padding-right: 1em;
+		width: 100%;
+		top: 50%;
+		left: 50%;
+		opacity: 0;
+		transform: translate(-50%, -50%);
+		transition: all 0.3s ease-in-out 0s;
+		color: white;
+		font-size: 1.25rem;
+	}
+	.content:hover .content-details {
+		top: 50%;
+		left: 50%;
+		opacity: 1;
+	}
+	.fade-in-left {
+		left: 20%;
+	}
+}
 /* Single Projects Page */
+.nav-title {
+	color: white;
+}
+
+.nav-links a {
+	display: inline-block;
+	position: relative;
+	text-decoration: none;
+	padding: 15px;
+	padding-right: 10px;
+	margin-right: 10px;
+	border: none;
+}
+
+.nav-links a:after {
+	background: none repeat scroll 0 0 transparent;
+	bottom: 0;
+	content: "";
+	display: block;
+	height: 4px;
+	left: 50%;
+	position: absolute;
+	background: #fc844c;
+	transition: width 0.3s ease 0s, left 0.3s ease 0s;
+	width: 0;
+}
+
+.nav-links a:hover:after,
+.nav-links a:active:after {
+	width: 100%;
+	left: 0;
+}
+
+.nav-links a {
+	background-image: linear-gradient(to right, #fc844c, #fc844c 50%, #fff 50%);
+	background-size: 200% 100%;
+	background-position: -100%;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:before {
+	content: "";
+	background: #fc844c;
+	display: block;
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 3px;
+}
+
+.nav-links a:hover {
+	background-position: 0;
+}
+
+@media screen and (min-width: 37.5em) {
+	.nav-subtitle,
+.nav-title {
+		font-size: 1.25rem;
+	}
+}
 /* About Page */
 /* Comments
 --------------------------------------------- */
@@ -902,10 +1129,6 @@ textarea {
 /* Footer
 --------------------------------------------- */
 .site-footer {
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100%;
 	background-color: #14504f;
 	color: #fff;
 }
@@ -918,13 +1141,7 @@ textarea {
 
 .site-footer p {
 	text-align: center;
-	margin-bottom: 1rem;
-}
-
-.site-footer a:hover,
-.site-footer a:focus,
-.site-footer a:active {
-	color: #cd9272;
+	margin-bottom: 0.5rem;
 }
 
 .footer-menus {
@@ -1007,7 +1224,7 @@ textarea {
 	clip: auto !important;
 	-webkit-clip-path: none;
 	        clip-path: none;
-	color: #21759b;
+	color: white;
 	display: block;
 	font-size: 0.875rem;
 	font-weight: 700;

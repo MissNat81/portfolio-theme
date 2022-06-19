@@ -19,13 +19,13 @@ get_header();
 
 		<section class="introduction">
 			<?php
-			if (function_exists('get_field') ) {
-				if (get_field('intro_text')) {
-					echo '<p class="line-1 anim-typewriter">';
-					the_field('intro_text');
-					echo '</p>';
-				}
-			}
+			// if (function_exists('get_field') ) {
+			// 	if (get_field('intro_text')) {
+			// 		echo '<p class="line-1 anim-typewriter">';
+			// 		the_field('intro_text');
+			// 		echo '</p>';
+			// 	}
+			// }
 			?>
 		</section>
 		<?php

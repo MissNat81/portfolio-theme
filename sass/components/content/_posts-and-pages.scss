@@ -29,60 +29,306 @@
   display: none;
 }
 
-// body {
-//   height: calc(100vh - 8em);
-//   padding: 4em;
-//   // color: rgba(255, 255, 255, 0.75);
-//   color: teal;
-//   // font-family: "Anonymous Pro", monospace;
-//   // background-color: rgb(25, 25, 25);
+.animated {
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+// .line-1 {
+//   position: relative;
+//   top: 50%;
+//   width: 24rem;
+//   // margin: 0 auto;
+//   border-right: 4px solid #fc844cbf;
+//   font-size: 1rem;
+//   text-align: left;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   transform: translateY(-50%);
+//   color: white;
 // }
 
-.line-1 {
-  position: relative;
-  top: 50%;
-  width: 24rem;
-  // margin: 0 auto;
-  border-right: 2px solid rgba(2, 48, 58, 0.75);
-  font-size: 1rem;
-  text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  transform: translateY(-50%);
-  color: teal;
-}
-
 /* Animation */
-.anim-typewriter {
-  animation: typewriter 4s steps(44) 1s 1 normal both,
-    blinkTextCursor 500ms steps(44) infinite normal;
+// .anim-typewriter {
+//   animation: typewriter 4s steps(44) 1s 1 normal both,
+//     blinkTextCursor 500ms steps(44) infinite normal;
+// }
+
+// @keyframes typewriter {
+//   from {
+//     width: 0;
+//   }
+//   to {
+//     width: 18.75rem;
+//   }
+// }
+
+// @keyframes blinkTextCursor {
+//   from {
+//     border-right-color: rgba(252, 132, 76, 0.75);
+//   }
+//   to {
+//     border-right-color: transparent;
+//   }
+// }
+
+@media screen and (min-width: 37.5em) {
+  // .line-1 {
+  //   font-size: 3rem;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  // }
+  // @keyframes typewriter {
+  //   from {
+  //     width: 0;
+  //   }
+  //   to {
+  //     width: 56rem;
+  //   }
+  // }
+
+  .animated {
+    font-size: 4rem;
+  }
 }
 
-@keyframes typewriter {
-  from {
-    width: 0;
+/* Archive Projects Page */
+
+.archive .page-title {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+/* Animate h1*/
+.waviy h1 {
+  // position: relative;
+  -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, 0.2));
+  font-size: 1.75rem;
+  text-align: center;
+}
+.waviy span {
+  // font-family: "Alfa Slab One", cursive;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  text-transform: uppercase;
+  animation: waviy 1s infinite;
+  animation-delay: calc(0.1s * var(--i));
+}
+@keyframes waviy {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    width: 36rem;
+  20% {
+    transform: translateY(-20px);
   }
 }
 
-@keyframes blinkTextCursor {
-  from {
-    border-right-color: rgba(2, 48, 58, 0.75);
-    to {
-      border-right-color: transparent;
-    }
-  }
+// .icon {
+//   width: 24px;
+//   height: 24px;
+// }
+// .projects {
+//   margin-bottom: 25px;
+//   justify-self: center;
+// }
+
+/** Grid option 1 - Square */
+.projects {
+  display: grid;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 5% auto;
+  grid-template-columns: 1fr;
+  grid-gap: 25px;
+}
+
+.project-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-item a {
+  text-decoration: none;
+  color: white;
+}
+
+.project-item h2 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.project-item img {
+  width: 250px;
+  min-height: 250px;
+  padding: 15px;
+  border-radius: 25px;
 }
 
 @media screen and (min-width: 37.5em) {
-  .line-1 {
-    font-size: 2rem;
+  .waviy h1 {
+    font-size: 2.75rem;
+  }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .project-item img {
+    width: 300px;
+    height: 300px;
   }
 }
-/* Archive Projects Page */
+
+@media screen and (min-width: 50rem) {
+  .waviy h1 {
+    font-size: 3rem;
+  }
+  .project-item img {
+    width: 400px;
+    height: 400px;
+  }
+
+  .project-item h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Hover effect over project cards */
+  .content {
+    position: relative;
+    // width: 90%;
+    max-width: 400px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .content .content-overlay {
+    background: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    -webkit-transition: all 0.4s ease-in-out 0s;
+    -moz-transition: all 0.4s ease-in-out 0s;
+    transition: all 0.4s ease-in-out 0s;
+    border-radius: 25px;
+  }
+
+  .content:hover .content-overlay {
+    opacity: 1;
+  }
+
+  .content-details {
+    position: absolute;
+    text-align: center;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    -moz-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    color: white;
+    font-size: 1.25rem;
+  }
+
+  .content:hover .content-details {
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+  }
+
+  .fade-in-left {
+    left: 20%;
+  }
+}
 
 /* Single Projects Page */
+.nav-title {
+  // background: #fc9e7e;
+  // color: black;
+  color: white;
+  // padding: 0.75rem;
+  // border-radius: 10rem;
+}
+.nav-links a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  // padding: 1rem;
+  padding: 15px;
+  padding-right: 10px;
+  margin-right: 10px;
+  border: none;
+}
+
+.nav-links a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 4px;
+  left: 50%;
+  position: absolute;
+  background: $color__link-hover;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.nav-links a:hover:after,
+.nav-links a:active:after {
+  width: 100%;
+  left: 0;
+}
+
+.nav-links a {
+  background-image: linear-gradient(
+    to right,
+    $color__link-hover,
+    $color__link-hover 50%,
+    #fff 50%
+  );
+  background-size: 200% 100%;
+  background-position: -100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-links a:before {
+  content: "";
+  background: $color__link-hover;
+  display: block;
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 3px;
+}
+
+.nav-links a:hover {
+  background-position: 0;
+}
+
+@media screen and (min-width: 37.5em) {
+  .nav-subtitle,
+  .nav-title {
+    font-size: 1.25rem;
+  }
+}
 
 /* About Page */

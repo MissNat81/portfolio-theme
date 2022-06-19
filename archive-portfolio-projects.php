@@ -14,9 +14,9 @@ get_header();
 		<?php
 
 		$args = array(
-			'post-type'			=> 'portfolio-projects',
+			'post_type'			=> 'portfolio-projects',
 			'posts_per_page'	=> -1,
-			'order'				=> 'ASC',
+			'order'				=> 'DESC',
 			'orderby'			=> 'title'
 		);
 
@@ -24,20 +24,42 @@ get_header();
 
 		if ($query -> have_posts() ) :
 			?>
-			<header class="page-title"><h1>My Projects</h1></header>
+			<header class="page-title waviy">
+				<h1>
+   				<span style="--i:1">P</span>
+				<span style="--i:2">r</span>
+				<span style="--i:3">o</span>
+				<span style="--i:4">j</span>
+				<span style="--i:5">e</span>
+				<span style="--i:6">c</span>
+				<span style="--i:7">t</span>
+				<span style="--i:8">s</span>
+
+
+   				</h1>
+			</header>
 			<section class="projects">
 			<?php
 				while ( $query -> have_posts() ) :
 					$query -> the_post();
-					?>
-					<article class="project-item">
-						<a href="<?php the_permalink(); ?>">
-							<?php the_post_thumbnail(); ?>
-							<h2><?php the_title(); ?></h2>
-							<p><?php the_excerpt(); ?></p>
-						</a>
+					?>				
+						<article class="project-item">
+					<a href="<?php the_permalink(); ?>">
+						<div class="content">
+							<div class="content-overlay"></div>						
+						<?php the_post_thumbnail('medium'); ?>	
+						<div class="content-details fade-in-left">	
+							<h2 class="project-title"><?php the_title(); ?></h2>
+							<!-- <?php if( get_field('icon') ): ?>
+								<img class="icon" src="<?php the_field('icon'); ?>" />
+							<?php endif; ?> -->
+							<p><?php the_excerpt(); ?></p>	
+						</div>
 						
+						</div>
+						</a>
 					</article>
+
 					<?php
 				endwhile;
 				wp_reset_postdata();
