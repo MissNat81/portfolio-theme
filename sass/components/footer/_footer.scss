@@ -5,13 +5,15 @@
   // bottom: 0;
   // width: 100%;
   background-color: $color__background-footer;
-  color: $color__text-footer;
+  // color: $color__text-footer;
 }
 
 .site-footer a {
   color: $color__text-footer;
   text-decoration: none;
   cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1rem;
 }
 
 .site-footer p {
@@ -33,7 +35,7 @@
   //   display: grid;
   //   grid-template-columns: 1fr 75px;
   //   align-items: center;
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 .footer-menus ul {

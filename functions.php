@@ -55,8 +55,8 @@ function portfolio_theme_setup() {
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'portfolio-theme' ),
-			"footer" => esc_html__ ("Footer Menu Location", "fwd"),
-			"social" => esc_html__ ("Social Menu Location", "fwd"),
+			"footer" => esc_html__ ("Footer Menu Location", "portfolio-theme"),
+			"social" => esc_html__ ("Social Menu Location", "portfolio-theme"),
 		)
 	);
 
@@ -162,6 +162,17 @@ function portfolio_theme_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	if (is_singular ( 'portfolio-projects' ) ) {
+		wp_enqueue_script(
+			'hide-show',
+			get_template_directory_uri() . '/js/hide-show.js',
+			array('jquery'),
+			'_S_VERSION',
+			true
+		);
+	}
+
 }
 add_action( 'wp_enqueue_scripts', 'portfolio_theme_scripts' );
 
