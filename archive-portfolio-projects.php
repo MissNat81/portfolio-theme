@@ -27,7 +27,7 @@ get_header();
 			<header class="page-title">
 				<h1>Pro<span class="dark-font">jects</span></h1>
 			</header>
-			<section class="projects">
+			<section class="projects fade-left">
 			<?php
 				while ( $query -> have_posts() ) :
 					$query -> the_post();

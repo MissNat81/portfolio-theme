@@ -708,6 +708,7 @@ textarea {
 		padding: 15px;
 		margin-right: 10px;
 		border: none;
+		font-size: 1.25rem;
 	}
 	.main-navigation a:after {
 		background: none repeat scroll 0 0 transparent;
@@ -803,14 +804,19 @@ textarea {
 }
 
 .animated {
-	font-size: 1.75rem;
+	font-size: 2.5rem;
 	padding: 3rem 1rem;
 	margin-top: 4.5rem;
 	margin-bottom: 10rem;
 }
 
 /* Animation */
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 26.56em) {
+	.animated {
+		font-size: 3rem;
+	}
+}
+@media screen and (min-width: 38.5em) {
 	.animated {
 		font-size: 4rem;
 	}
@@ -818,6 +824,11 @@ textarea {
 @media screen and (min-width: 50em) {
 	.animated {
 		font-size: 5rem;
+	}
+}
+@media screen and (min-width: 65.625em) {
+	.animated {
+		font-size: 7rem;
 	}
 }
 /* Archive Projects Page */
@@ -911,7 +922,7 @@ textarea {
 	.content .content-overlay {
 		background: rgba(23, 37, 42, 0.7);
 		position: absolute;
-		height: 100%;
+		height: 400px;
 		width: 100%;
 		left: 0;
 		top: 0;
@@ -976,8 +987,7 @@ textarea {
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
-	padding: 1rem;
-	margin: 1rem;
+	margin-bottom: 1rem;
 	text-align: center;
 }
 
@@ -1038,10 +1048,9 @@ textarea {
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
-	padding: 5px;
-	margin: 12px;
+	margin: 5px;
 	border: none;
-	font-size: 0.75rem;
+	font-size: 0.85rem;
 }
 
 .nav-links a:after {
@@ -1088,7 +1097,7 @@ textarea {
 	background-position: 0;
 }
 
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 38.5em) {
 	.single .entry-header {
 		margin-bottom: 1rem;
 	}
@@ -1098,11 +1107,14 @@ textarea {
 	.single-portfolio-projects h2 {
 		font-size: 1.75rem;
 	}
+	.single .btn-process {
+		padding: 1rem;
+		margin: 1rem;
+	}
 	.btn-1,
 .btn-2 {
 		margin: 20px;
 		height: 55px;
-		font-size: 1.25rem;
 	}
 	.nav-subtitle,
 .nav-title {
@@ -1116,6 +1128,10 @@ textarea {
 	.single-portfolio-projects h2 {
 		font-size: 2.25rem;
 	}
+	.nav-subtitle,
+.nav-title {
+		font-size: 1.4rem;
+	}
 }
 /* Single Projects Pages */
 /* Portfolio Page */
@@ -1123,6 +1139,68 @@ textarea {
 /* Shopify Page */
 /* Movie Database Page */
 /* About Page */
+.page-template-default .entry-header {
+	display: none;
+}
+
+.about-page-title {
+	text-align: center;
+	padding: 1rem;
+	margin-top: 4rem;
+}
+
+.about-page-title h1 {
+	font-size: 1.55rem;
+}
+
+.dark-font {
+	color: #17252a;
+}
+
+.contact h3 {
+	margin-bottom: 2rem;
+}
+
+.social-navigation svg {
+	fill: #feffff;
+}
+
+.social-navigation ul {
+	list-style: none;
+}
+
+.social-navigation a {
+	background-color: #17252a;
+	padding: 0.75rem;
+	border-radius: 50%;
+}
+
+.wp-image-189 {
+	height: 75vh;
+	z-index: -1;
+}
+
+@media screen and (min-width: 38.5em) {
+	.about-page-title h1 {
+		font-size: 2.75rem;
+	}
+	.about p {
+		font-size: 1.25rem;
+	}
+	.contact-me {
+		display: flex;
+		justify-content: center;
+		align-items: baseline;
+	}
+}
+@media screen and (min-width: 50em) {
+	.about-page-title h1 {
+		font-size: 3rem;
+	}
+	.about p {
+		font-size: 1.5rem;
+	}
+}
 /* Comments
 --------------------------------------------- */
 .comment-content a {
@@ -1246,42 +1324,29 @@ textarea {
 	margin-bottom: 0.5rem;
 }
 
-.footer-menus {
+.footer-menu {
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	font-size: 1rem;
 }
 
-.footer-menus ul {
+.footer-menu ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
 }
 
-.footer-menus li {
+.footer-menu li {
 	display: inline-block;
+	margin: 0.25rem;
 }
 
-.footer-navigation {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 1rem;
-}
-
-.social-navigation svg {
-	fill: #feffff;
-	margin-left: 0.5rem;
-}
-
-.social-navigation li:last-child {
-	margin-right: 2rem;
-}
-
-@media screen and (min-width: 37.5em) {
+@media screen and (min-width: 38.5em) {
 	.footer-navigation {
 		visibility: hidden;
+	}
+	.footer {
+		font-size: 1.25rem;
 	}
 }
 /*--------------------------------------------------------------

@@ -13,30 +13,19 @@
 
 	<footer id="colophon" class="site-footer">
 
-		<div class="footer-menus">
+		<div class="footer-menu">
 			<nav id="footer-navigation" class="footer-navigation">
 				<?php wp_nav_menu(array('theme_location' => 'footer')); ?>
 			</nav>			
+		</div>
 			
-			<nav id="social-navigation" class="social-navigation">
+
+			<!-- <nav id="social-navigation" class="social-navigation">
 			<?php wp_nav_menu(array('theme_location' => 'social')); ?>
-			</nav>
-		</div><!-- .footer-menus -->
+			</nav> -->			
 
 		<div class="site-info">
-			<!-- <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'portfolio-theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'portfolio-theme' ), 'WordPress' );
-				?>
-			</a> -->
-			<!-- <span class="sep"> | </span> -->
-				<!-- <?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'portfolio-theme' ), 'portfolio-theme', '<a href="https://natalieratayczak.com">natalie</a>' );
-				?> -->
-				<p>&copy 2022 Natalie Ratayczak</p>
-				
+			<p class="footer">&copy 2022 Natalie Ratayczak</p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
