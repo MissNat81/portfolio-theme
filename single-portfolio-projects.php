@@ -16,9 +16,11 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			?>
-			<!-- <h2 class="project-title"><?php the_title(); ?></h2> -->
+			<div class="project-header">
+				<h1 class="project-title"><?php the_title(); ?></h1>
+			</div>
 			<?php
-			get_template_part( 'template-parts/content', 'page' );
+			// get_template_part( 'template-parts/content', 'page' );
 			?>
 			<article class="individual-project">
 			<?php				
@@ -31,43 +33,53 @@ get_header();
     				echo wp_get_attachment_image( $image, $size );
 				endif;
  
-					if ( get_field( 'about_header' ) ) :
-						?>
-						<h2><?php the_field( 'about_header' ); ?></h2>
-						<?php
-					endif;
 
-					if (get_field ( 'project_overview' ) ) :
+				?>
+					<div class="overview">
+				<?php
+						if ( get_field( 'about_header' ) ) :
+							?>
+							<h2><?php the_field( 'about_header' ); ?></h2>
+							<?php
+						endif;
+		
+						if (get_field ( 'project_overview' ) ) :
+							?>
+							<p class="overview"><?php the_field( 'project_overview' ); ?></p>
+							<?php
+						endif;
 						?>
-						<p><?php the_field( 'project_overview' ); ?></p>
-						<?php
-					endif;
+					</div>
 
-					if (get_field ( 'teck_stack' ) ) :
-						?>
-						<h2><?php the_field( 'teck_stack' ); ?></h2>
-						<?php
-					endif;
-					?>
-					<div class="icon-images">
+					<div class="tech">
 					<?php
-						$image = get_field('icons');
-						$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) :
-    						echo wp_get_attachment_image( $image, $size );
+						if (get_field ( 'teck_stack' ) ) :
+							?>
+							<h2><?php the_field( 'teck_stack' ); ?></h2>
+							<?php
 						endif;
-						$image2 = get_field('icons2');
-						$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) :
-    						echo wp_get_attachment_image( $image2, $size );
-						endif;
-						$image3 = get_field('icons3');
-						$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) :
-    						echo wp_get_attachment_image( $image3, $size );
-						endif;						
 						?>
+						<div class="icon-images">
+						<?php
+							$image = get_field('icons');
+							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+							if( $image ) :
+    							echo wp_get_attachment_image( $image, $size );
+							endif;
+							$image2 = get_field('icons2');
+							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+							if( $image ) :
+    							echo wp_get_attachment_image( $image2, $size );
+							endif;
+							$image3 = get_field('icons3');
+							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+							if( $image ) :
+    							echo wp_get_attachment_image( $image3, $size );
+							endif;						
+							?>
 						</div>
+					</div>
+				
 
 					<section class="process">
 					 <div class="btn-process">
@@ -89,19 +101,46 @@ get_header();
 						</div> 
 
 						<div class="content-process">
-						<?php
-						if (get_field ( 'development_content' ) ) :
-							?>
-							<p class="content2"><?php the_field( 'development_content' ); ?></p><?php
-						endif;
-					
-							if (get_field ( 'design_content' ) ) :
-							?>
-							<p class="content1"><?php the_field( 'design_content' ); ?></p>						
+
+						<div class="content1">
 							<?php
-						endif;
-						?>			
-					</div>
+								if (get_field ( 'design_content' ) ) :
+								?>
+									<p><?php the_field( 'design_content' ); ?></p>						
+								<?php
+								endif;
+								?>
+							</div>
+
+							<div class="content2">
+							<?php
+								if (get_field ( 'development_content' ) ) :
+								?>
+									<p><?php the_field( 'development_content' ); ?></p>
+								<?php
+								endif;
+							?>
+							</div>				
+										
+						</div>
+					</section>
+
+					<section class="reflection">
+						<div class="reflection-content">
+							<?php
+							if ( get_field( 'reflection_title' ) ) :
+								?>
+								<h2><?php the_field( 'reflection_title' );?></h2>
+								<?php
+							endif;
+
+							if (get_field( 'reflection_content' ) ) :
+								?>
+								<p><?php the_field( 'reflection_content' );?></p>
+								<?php
+							endif;
+							?>
+						</div>
 					</section>
 					
 					<?php

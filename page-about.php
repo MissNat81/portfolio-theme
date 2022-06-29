@@ -16,56 +16,72 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-
+		
 		<?php
-		while ( have_posts() ) :
-			the_post();
+			while ( have_posts() ) :
+				the_post();
 			
-			?>
-			<header class="about-page-title">
-			<h1>This is<span class="dark-font"> me</span></h1>
-			</header>
+				?>
+				
+				
+					<header class="about-page-title">
+					<h1>This is<span class="dark-font"> me</span></h1>
+					</header>
 	
-			<section class="about">
-			<?php			
-			if (function_exists ('get_field') ) :
+					<div class="about-container">
+					<!-- <section class="about"> -->
+					
+					<div class="about-me">	
+					<?php		
+					if (function_exists ('get_field') ) :
 			
 				// $image = get_field('hero_image');
 				// 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
 				// 	if( $image ) :
 				// 		echo wp_get_attachment_image( $image, $size );
 				// 	endif;
+		
 
-				
-
-				if (get_field( 'about_me_text' ) ) :
-					?>
-					<p><?php the_field('about_me_text'); ?></p>
-					<?php
-				endif;
+						if (get_field( 'about_me_text' ) ) :
+							?>
+							<p><?php the_field('about_me_text'); ?></p>
+							<?php
+						endif;
 					
-			endif;
-			?>
-			</section>
+					endif;
+					?>
+					</div>
 
-			<section class="contact-me">
-				<h3>Want to get in touch?</h3>
+				<div class="contact-me">
+					
+					<h3>Want to get in touch?</h3>
 
-				<nav id="social-navigation" class="social-navigation">
-				<?php wp_nav_menu(array('theme_location' => 'social')); ?>
-				</nav>
+					<nav id="social-navigation" class="social-navigation">
+					<?php wp_nav_menu(array('theme_location' => 'social')); ?>
+					</nav>
+				</div>
 				
-			</section>
-
-			<?php
-			get_template_part( 'template-parts/content', 'page' );
-			
-			
-
+					
+				
+				<div class="about-image">
+				<?php
+					if(function_exists ('get_field')) :
+						$image = get_field('hero_image');
+						$size = 'large'; // (thumbnail, medium, large, full or custom size)
+						if( $image ) :
+							echo wp_get_attachment_image( $image, $size );					
+						endif;
+					endif;
+					?>		
+				</div>	
+				<!-- </section> -->
+				</div>
+				<?php
 			
 
 		endwhile; // End of the loop.
 		?>
+
 
 	</main><!-- #main -->
 

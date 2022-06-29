@@ -478,6 +478,8 @@ big {
 --------------------------------------------- */
 body {
 	background: #3aafa9;
+	width: 100%;
+	height: 100vh;
 	overflow-y: hidden;
 }
 
@@ -687,7 +689,7 @@ textarea {
 	display: none;
 }
 
-@media screen and (min-width: 38.125em) {
+@media screen and (min-width: 38.5em) {
 	.main-navigation {
 		display: inline-block;
 		font-family: "Montserrat", sans-serif;
@@ -705,7 +707,7 @@ textarea {
 		position: relative;
 		text-decoration: none;
 		text-transform: uppercase;
-		padding: 15px;
+		padding: 1rem 1rem 0.5rem 1rem;
 		margin-right: 10px;
 		border: none;
 		font-size: 1.25rem;
@@ -718,7 +720,7 @@ textarea {
 		height: 4px;
 		left: 50%;
 		position: absolute;
-		background: #17252a;
+		background: #f7186a;
 		transition: width 0.3s ease 0s, left 0.3s ease 0s;
 		width: 0;
 	}
@@ -834,7 +836,7 @@ textarea {
 /* Archive Projects Page */
 .archive .page-title {
 	text-align: center;
-	margin-top: 4rem;
+	margin-top: 2rem;
 }
 
 .page-title h1 {
@@ -845,7 +847,7 @@ textarea {
 	color: #17252a;
 }
 
-/** Grid option 1 - Square */
+/** Grid - Square */
 .projects {
 	display: grid;
 	text-align: center;
@@ -886,6 +888,9 @@ textarea {
 }
 
 @media screen and (min-width: 38.5em) {
+	.archive .page-title {
+		margin-top: 3rem;
+	}
 	.archive .page-title h1 {
 		font-size: 2.75rem;
 	}
@@ -899,6 +904,9 @@ textarea {
 	}
 }
 @media screen and (min-width: 50rem) {
+	.archive .page-title {
+		margin-top: 4rem;
+	}
 	.archive .page-title h1 {
 		font-size: 3rem;
 	}
@@ -963,24 +971,44 @@ textarea {
 		font-weight: bold;
 	}
 }
-/* All Individual Project Pages */
-.single .entry-header {
+/* All Single Project Pages */
+.single .project-header {
+	margin-top: 1.5rem;
 	text-align: center;
-	padding: 0.5rem;
-	margin: 1rem 0.5rem;
 }
 
-.single .entry-title {
-	font-size: 1.55rem;
+.single .project-title {
+	font-size: 1.75rem;
 	padding: 1rem;
+}
+
+.single .attachment-large {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+}
+
+.individual-project {
+	margin: 10px;
+}
+
+.individual-project p {
+	font-size: 1rem;
 }
 
 .single h2 {
 	font-size: 1.25rem;
 }
 
+.single .icon-images img {
+	width: 65px;
+	height: 65px;
+	padding: 0.5rem;
+}
+
 .process {
-	margin: 15px;
+	margin-top: 1rem;
 }
 
 .single .btn-process {
@@ -993,6 +1021,9 @@ textarea {
 
 .btn-1,
 .btn-2 {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
 	width: 200px;
 	font-size: 1rem;
 	font-weight: 600;
@@ -1000,6 +1031,7 @@ textarea {
 	cursor: pointer;
 	margin: 10px;
 	height: 40px;
+	padding: 10px;
 	text-align: center;
 	border: none;
 	background-size: 300% 100%;
@@ -1030,18 +1062,17 @@ textarea {
 	display: flex;
 	flex-direction: row;
 	text-align: left;
-	background: #feffff;
+	background-color: #feffff;
 }
 
-.single .icon-images img {
-	width: 90px;
-	height: 90px;
-	padding: 1rem;
-	background-color: white;
+.content1,
+.content2 {
+	padding: 0.75rem;
 }
 
 .nav-title {
 	color: white;
+	font-size: 1rem;
 }
 
 .nav-links a {
@@ -1060,8 +1091,8 @@ textarea {
 	display: block;
 	height: 4px;
 	left: 50%;
+	background: #f7186a;
 	position: absolute;
-	background: #17252a;
 	transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	width: 0;
 }
@@ -1097,15 +1128,53 @@ textarea {
 	background-position: 0;
 }
 
-@media screen and (min-width: 38.5em) {
-	.single .entry-header {
+@media screen and (min-width: 39.75em) {
+	.single .project-header {
+		margin-top: 3rem;
 		margin-bottom: 1rem;
 	}
-	.single-portfolio-projects .entry-title {
-		font-size: 2.25rem;
+	.single .project-title {
+		font-size: 3rem;
 	}
-	.single-portfolio-projects h2 {
-		font-size: 1.75rem;
+	.individual-project {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin: 15px;
+		gap: 0.75rem;
+	}
+	.individual-project p {
+		font-size: 1.4rem;
+		margin: 15px;
+	}
+	.single h2 {
+		font-size: 1.65rem;
+		padding: 0.5rem;
+	}
+	.single .attachment-large {
+		grid-column: 1/4;
+		grid-row: 1/2;
+	}
+	.overview {
+		grid-column: 1/3;
+		grid-row: 2/3;
+		background-color: #17252a;
+		color: #feffff;
+	}
+	.tech {
+		grid-column: 3/4;
+		grid-row: 2/3;
+		background-color: #ed6ea0;
+	}
+	.process {
+		margin-top: 0;
+		grid-column: 1/4;
+		grid-row: 3/4;
+	}
+	.reflection {
+		grid-column: 1/4;
+		grid-row: 4/5;
+		background-color: #17252a;
+		color: #feffff;
 	}
 	.single .btn-process {
 		padding: 1rem;
@@ -1115,25 +1184,31 @@ textarea {
 .btn-2 {
 		margin: 20px;
 		height: 55px;
-	}
-	.nav-subtitle,
-.nav-title {
-		font-size: 1rem;
+		font-size: 1.4rem;
 	}
 }
 @media screen and (min-width: 50em) {
-	.single-portfolio-projects .entry-title {
-		font-size: 3rem;
+	.single .project-header {
+		margin-top: rem;
+	}
+	.single .project-title {
+		font-size: 4rem;
 	}
 	.single-portfolio-projects h2 {
 		font-size: 2.25rem;
+	}
+	.individual-project {
+		grid-template-rows: 500px 350px 1fr 350px;
+	}
+	.single .icon-images img {
+		width: 75px;
+		height: 75px;
 	}
 	.nav-subtitle,
 .nav-title {
 		font-size: 1.4rem;
 	}
 }
-/* Single Projects Pages */
 /* Portfolio Page */
 /* Capstone Page */
 /* Shopify Page */
@@ -1157,40 +1232,66 @@ textarea {
 	color: #17252a;
 }
 
+.contact-me {
+	display: flex;
+	justify-content: center;
+	align-items: baseline;
+}
+
 .contact h3 {
 	margin-bottom: 2rem;
 }
 
 .social-navigation svg {
 	fill: #feffff;
+	width: 28px;
+	height: 28px;
 }
 
 .social-navigation ul {
 	list-style: none;
+	margin: 0;
+	padding: 1rem;
 }
 
-.social-navigation a {
-	background-color: #17252a;
-	padding: 0.75rem;
-	border-radius: 50%;
+.about-container p {
+	margin-bottom: 0;
 }
 
-.wp-image-189 {
-	height: 75vh;
-	z-index: -1;
+.page-id-11 .attachment-large {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
 }
 
 @media screen and (min-width: 38.5em) {
 	.about-page-title h1 {
 		font-size: 2.75rem;
 	}
-	.about p {
+	.about-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		margin: 15px;
+		gap: 0.75rem;
+	}
+	.about-me {
+		grid-column: 1/4;
+		grid-row: 1/3;
+	}
+	.about-container p {
 		font-size: 1.25rem;
 	}
 	.contact-me {
 		display: flex;
 		justify-content: center;
 		align-items: baseline;
+		grid-column: 1/4;
+		grid-row: 3/4;
+	}
+	.about-image {
+		grid-column: 1/4;
+		grid-row: 4/5;
 	}
 }
 @media screen and (min-width: 50em) {
@@ -1321,13 +1422,14 @@ textarea {
 
 .site-footer p {
 	text-align: center;
-	margin-bottom: 0.5rem;
+	padding: 1rem;
 }
 
 .footer-menu {
 	display: flex;
 	justify-content: center;
 	font-size: 1rem;
+	margin-top: 3rem;
 }
 
 .footer-menu ul {
