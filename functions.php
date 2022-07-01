@@ -117,7 +117,7 @@ add_action( 'after_setup_theme', 'portfolio_theme_setup' );
  * @global int $content_width
  */
 function portfolio_theme_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'portfolio_theme_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'portfolio_theme_content_width', 1920 );
 }
 add_action( 'after_setup_theme', 'portfolio_theme_content_width', 0 );
 
@@ -174,11 +174,11 @@ function portfolio_theme_scripts() {
 		);
 	}
 
-	// Enqueue Animations Scroll on Archive Projects Page
+	// Enqueue Image Hover on Archive Projects Page
 	if (is_post_type_archive ( 'portfolio-projects' )) {
 		wp_enqueue_script(
-			'animations-scroll',
-			get_template_directory_uri() . '/js/animations-scroll.js',
+			'image-hover',
+			get_template_directory_uri() . '/js/image-hover.js',
 			array('jquery'),
 			'_S_VERSION',
 			true

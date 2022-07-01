@@ -188,13 +188,13 @@
 //   height: 24px;
 // }
 
-@media screen and (min-width: 38.5em) {
+@media screen and (min-width: 38.625em) {
   .archive .page-title {
     margin-top: 3rem;
   }
 
   .archive .page-title h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   .projects {
@@ -214,12 +214,7 @@
   }
 
   .archive .page-title h1 {
-    font-size: 3rem;
-  }
-
-  .project-item {
-    // background-color: #def2f1;
-    // background-color: #17252a;
+    font-size: 3.5rem;
   }
 
   .project-item img {
@@ -246,7 +241,6 @@
 
   .content .content-overlay {
     background: rgba(23, 37, 42, 0.7);
-    // background: rgba(43, 122, 120, 0.7);
     position: absolute;
     height: 400px;
     width: 100%;
@@ -302,7 +296,11 @@
   }
 }
 
-/* All Single Project Pages */
+/* Single Project Pages */
+
+.single .entry-title {
+  display: none;
+}
 
 .single .project-header {
   margin-top: 1.5rem;
@@ -310,7 +308,7 @@
 }
 
 .single .project-title {
-  font-size: 1.75rem;
+  font-size: 2rem;
   padding: 1rem;
 }
 
@@ -322,11 +320,21 @@
 }
 
 .individual-project {
-  margin: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .individual-project p {
   font-size: 1rem;
+}
+
+.single .live-site {
+  color: #feffff;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 1px solid #f7186a;
+  padding: 0.5rem;
+  margin: 0.5rem;
 }
 
 .single h2 {
@@ -410,7 +418,6 @@
   flex-direction: row;
   text-align: left;
   background-color: #feffff;
-  // border: 1px solid #f7186a;
 }
 
 .content1,
@@ -418,9 +425,28 @@
   padding: 0.75rem;
 }
 
+.single .wp-block-video {
+  max-width: 750px;
+}
+
+.postid-30 .video-content {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0.5rem;
+}
+
+.postid-30 .video {
+  background-color: #17252a;
+  padding: 0.5rem;
+}
+
+.postid-30 .video-text {
+  padding: 0.25rem;
+}
+
 .nav-title {
   color: white;
-  font-size: 1rem;
+  font-size: 0.875rem;
 }
 
 .nav-links a {
@@ -482,10 +508,17 @@
   background-position: 0;
 }
 
+@media screen and (min-width: 26.25em) {
+  .nav-subtitle,
+  .nav-title {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (min-width: 39.75em) {
   .single .project-header {
     margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
   }
 
   .single .project-title {
@@ -501,7 +534,14 @@
 
   .individual-project p {
     font-size: 1.4rem;
-    margin: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .single .live-site {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
   }
 
   .single h2 {
@@ -543,6 +583,22 @@
     color: #feffff;
   }
 
+  .postid-30 .video-content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.5rem;
+  }
+
+  .postid-30 .video {
+    grid-column: 2 /4;
+    grid-row: 1 / 2;
+  }
+
+  .postid-30 .video-text {
+    background-color: #ed6ea0;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
   .single .btn-process {
     padding: 1rem;
     margin: 1rem;
@@ -554,20 +610,15 @@
     height: 55px;
     font-size: 1.4rem;
   }
-
-  // .nav-subtitle,
-  // .nav-title {
-  //   font-size: 1rem;
-  // }
 }
 
 @media screen and (min-width: 50em) {
   .single .project-header {
-    margin-top: rem;
+    margin-top: 4rem;
   }
 
   .single .project-title {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 
   .single-portfolio-projects h2 {
@@ -575,7 +626,7 @@
   }
 
   .individual-project {
-    grid-template-rows: 500px 350px 1fr 350px;
+    grid-template-rows: auto 400px 1fr 350px;
   }
 
   .single .icon-images img {
@@ -585,7 +636,7 @@
 
   .nav-subtitle,
   .nav-title {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 }
 
@@ -619,7 +670,7 @@
 }
 
 .about-page-title h1 {
-  font-size: 1.55rem;
+  font-size: 2rem;
 }
 
 .dark-font {
@@ -671,7 +722,7 @@
 
 @media screen and (min-width: 38.5em) {
   .about-page-title h1 {
-    font-size: 2.75rem;
+    font-size: 3rem;
   }
 
   .about-container {
@@ -708,7 +759,7 @@
 
 @media screen and (min-width: 50em) {
   .about-page-title h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .about p {

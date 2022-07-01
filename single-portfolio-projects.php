@@ -47,6 +47,19 @@ get_header();
 							?>
 							<p class="overview"><?php the_field( 'project_overview' ); ?></p>
 							<?php
+							$link = get_field( 'link' );
+	
+							if( $link ) : 
+							$link_url = $link['url'];
+	  						$link_title = $link['title'];
+							$link_target = $link['target'] ? $link['target'] : '_self';
+							?>
+							<a class="live-site" href="<?php echo esc_url( $link_url ); ?>"
+							target="<?php echo esc_attr( $link_target ); ?>
+							"><?php echo esc_html( $link_title ); ?>
+							</a>							
+							<?php
+							endif;
 						endif;
 						?>
 					</div>
@@ -71,11 +84,11 @@ get_header();
 							if( $image ) :
     							echo wp_get_attachment_image( $image2, $size );
 							endif;
-							$image3 = get_field('icons3');
+												$image3 = get_field('icons3');
 							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 							if( $image ) :
     							echo wp_get_attachment_image( $image3, $size );
-							endif;						
+							endif;	
 							?>
 						</div>
 					</div>
@@ -117,7 +130,32 @@ get_header();
 								if (get_field ( 'development_content' ) ) :
 								?>
 									<p><?php the_field( 'development_content' ); ?></p>
-								<?php
+									<?php
+									// $video_mp4 =  get_field('mp4_video'); // MP4 Field Name
+									// // $attr =  array(
+									// // 	'mp4'      => $video_mp4,
+									// // 	'preload'  => 'auto',
+									// // 	'width'=> '275px'
+									// // 	);
+									// 	echo wp_video_shortcode(  $video_mp4 );
+									?>
+									<div class="video-content">									
+									<div class="video">
+									<?php
+									get_template_part( 'template-parts/content', 'page' );
+									?>
+									</div>
+									<div class="video-text">
+									<?php
+									if (get_field( 'video_text' ) ) :
+									?>									
+									<p><?php the_field( 'video_text' ); ?></p>
+									</div>
+									<?php
+									endif;
+									?>
+									</div>
+									<?php
 								endif;
 							?>
 							</div>				
