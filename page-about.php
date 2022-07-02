@@ -28,12 +28,12 @@ get_header();
 					<h1>This is<span class="dark-font"> me</span></h1>
 					</header>
 	
-					<div class="about-container">
-					<!-- <section class="about"> -->
+					<section class="about-container">
 					
-					<div class="about-me">	
-					<?php		
-					if (function_exists ('get_field') ) :
+					
+						<article class="about-me">	
+							<?php		
+							if (function_exists ('get_field') ) :
 			
 				// $image = get_field('hero_image');
 				// 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -42,40 +42,40 @@ get_header();
 				// 	endif;
 		
 
-						if (get_field( 'about_me_text' ) ) :
+							if (get_field( 'about_me_text' ) ) :
+								?>
+								<p><?php the_field('about_me_text'); ?></p>
+								<?php
+							endif;
+					
+							endif;
 							?>
-							<p><?php the_field('about_me_text'); ?></p>
-							<?php
-						endif;
-					
-					endif;
-					?>
-					</div>
+						</article>
 
-				<div class="contact-me">
+						<article class="contact-me">
 					
-					<h3>Want to get in touch?</h3>
+							<h3>Want to get in touch?</h3>
 
-					<nav id="social-navigation" class="social-navigation">
-					<?php wp_nav_menu(array('theme_location' => 'social')); ?>
-					</nav>
-				</div>
+							<nav id="social-navigation" class="social-navigation">
+							<?php wp_nav_menu(array('theme_location' => 'social')); ?>
+							</nav>
+						</article>
 				
 					
 				
-				<div class="about-image">
-				<?php
-					if(function_exists ('get_field')) :
+						<figure class="about-image">
+						<?php
+						if(function_exists ('get_field')) :
 						$image = get_field('hero_image');
 						$size = 'large'; // (thumbnail, medium, large, full or custom size)
-						if( $image ) :
-							echo wp_get_attachment_image( $image, $size );					
+							if( $image ) :
+								echo wp_get_attachment_image( $image, $size );					
+							endif;
 						endif;
-					endif;
-					?>		
-				</div>	
-				<!-- </section> -->
-				</div>
+						?>		
+					</figure>	
+
+				</section>
 				<?php
 			
 

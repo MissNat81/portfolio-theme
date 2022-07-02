@@ -476,7 +476,6 @@ body {
 	background: #3aafa9;
 	width: 100%;
 	height: 100vh;
-	overflow-y: hidden;
 }
 
 hr {
@@ -658,11 +657,11 @@ textarea {
 	position: relative;
 	text-decoration: none;
 	font-size: 1.125rem;
-	padding-top: 15px;
+	padding-top: 0.9375rem;
 	margin: 1rem;
 }
 .site-header a:last-child {
-	margin-right: 20px;
+	margin-right: 1.25rem;
 }
 
 @media screen and (min-width: 38em) {
@@ -676,7 +675,7 @@ textarea {
 	.site-header img {
 		width: 50px;
 		height: 50px;
-		margin-left: 15px;
+		margin-left: 0.9375rem;
 	}
 }
 /* Navigation
@@ -704,7 +703,7 @@ textarea {
 		text-decoration: none;
 		text-transform: uppercase;
 		padding: 1rem 1rem 0.5rem 1rem;
-		margin-right: 10px;
+		margin-right: 0.625rem;
 		border: none;
 		font-size: 1.25rem;
 	}
@@ -716,7 +715,7 @@ textarea {
 		height: 4px;
 		left: 50%;
 		position: absolute;
-		background: #f7186a;
+		background: #def2f1;
 		transition: width 0.3s ease 0s, left 0.3s ease 0s;
 		width: 0;
 	}
@@ -750,7 +749,7 @@ textarea {
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
@@ -777,7 +776,7 @@ textarea {
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 .updated:not(.published) {
@@ -787,16 +786,15 @@ textarea {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5rem 0 0;
 }
 
 .page-links {
 	clear: both;
-	margin: 0 0 1.5em;
+	margin: 0 0 1.5rem;
 }
 
 /* Home Page */
-/* Hide the Home title */
 .page-id-7 h1 {
 	display: none;
 }
@@ -843,7 +841,6 @@ textarea {
 	color: #17252a;
 }
 
-/** Grid - Square */
 .projects {
 	display: grid;
 	text-align: center;
@@ -852,14 +849,12 @@ textarea {
 	max-width: 900px;
 	margin: 5% auto;
 	grid-template-columns: 1fr;
-	grid-gap: 15px;
 }
 
 .project-item {
 	display: flex;
-	align-items: center;
 	justify-content: center;
-	padding: 15px;
+	padding: 0.9375rem;
 }
 
 .project-item a {
@@ -895,8 +890,8 @@ textarea {
 		grid-template-rows: 1fr 1fr;
 	}
 	.project-item img {
-		width: 300px;
-		height: 300px;
+		width: 275px;
+		height: 275px;
 	}
 }
 @media screen and (min-width: 50rem) {
@@ -906,9 +901,12 @@ textarea {
 	.archive .page-title h1 {
 		font-size: 3.5rem;
 	}
+	.projects {
+		row-gap: 15px;
+	}
 	.project-item img {
-		width: 400px;
-		height: 400px;
+		width: 350px;
+		height: 350px;
 	}
 	.project-item h2 {
 		font-size: 2.25rem;
@@ -924,9 +922,9 @@ textarea {
 		overflow: hidden;
 	}
 	.content .content-overlay {
-		background: rgba(23, 37, 42, 0.7);
+		background: rgba(23, 37, 42, 0.75);
 		position: absolute;
-		height: 400px;
+		height: 350px;
 		width: 100%;
 		left: 0;
 		top: 0;
@@ -941,8 +939,8 @@ textarea {
 	.content-details {
 		position: absolute;
 		text-align: center;
-		padding-left: 1em;
-		padding-right: 1em;
+		padding-left: 1rem;
+		padding-right: 1rem;
 		width: 100%;
 		top: 50%;
 		left: 50%;
@@ -990,25 +988,31 @@ textarea {
 }
 
 .individual-project {
-	margin-left: 10px;
-	margin-right: 10px;
+	margin-left: 0.625rem;
+	margin-right: 0.625rem;
 }
 
 .individual-project p {
 	font-size: 1rem;
 }
 
-.single .live-site {
-	color: #feffff;
-	font-size: 1rem;
-	text-decoration: none;
-	border: 1px solid #f7186a;
-	padding: 0.5rem;
-	margin: 0.5rem;
-}
-
 .single h2 {
 	font-size: 1.25rem;
+}
+
+.single .link-site {
+	display: flex;
+	justify-content: space-between;
+}
+
+.single .live-site {
+	display: inline-block;
+	color: #def2f1;
+	font-size: 1rem;
+	text-decoration: none;
+	border: 2px solid #def2f1;
+	padding: 0.5rem;
+	margin: 0.5rem;
 }
 
 .single .icon-images img {
@@ -1037,11 +1041,11 @@ textarea {
 	width: 200px;
 	font-size: 1rem;
 	font-weight: 600;
-	color: #fff;
+	color: #f2ffff;
 	cursor: pointer;
-	margin: 10px;
+	margin: 0.625rem;
 	height: 40px;
-	padding: 10px;
+	padding: 0.625rem;
 	text-align: center;
 	border: none;
 	background-size: 300% 100%;
@@ -1064,15 +1068,15 @@ textarea {
 
 .btn-1,
 .btn-2 {
-	background-image: linear-gradient(to right, #ed6ea0, #ec8c69, #f7186a, #fbb03b);
-	box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+	background-image: linear-gradient(to right, #29323c, #485563, #cb2d6f, #66fcf1);
+	box-shadow: 0 4px 15px 0 rgba(45, 54, 65, 0.75);
 }
 
 .content-process {
 	display: flex;
 	flex-direction: row;
 	text-align: left;
-	background-color: #feffff;
+	border: 2px solid #def2f1;
 }
 
 .content1,
@@ -1080,7 +1084,17 @@ textarea {
 	padding: 0.75rem;
 }
 
-.single .wp-block-video {
+.content-process hr {
+	background-color: #2b7a78;
+	height: 2px;
+	width: 75%;
+}
+
+.postid-28 .wp-block-video {
+	max-width: 1024px;
+}
+
+.postid-30 .wp-block-video {
 	max-width: 750px;
 }
 
@@ -1108,7 +1122,7 @@ textarea {
 	display: inline-block;
 	position: relative;
 	text-decoration: none;
-	margin: 5px;
+	margin: 0.3125rem;
 	border: none;
 	font-size: 0.85rem;
 }
@@ -1118,9 +1132,9 @@ textarea {
 	bottom: 0;
 	content: "";
 	display: block;
-	height: 4px;
+	height: 0.25rem;
 	left: 50%;
-	background: #f7186a;
+	background: #def2f1;
 	position: absolute;
 	transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	width: 0;
@@ -1174,18 +1188,19 @@ textarea {
 	.individual-project {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		margin: 15px;
+		margin: 0.9375rem;
 		gap: 0.75rem;
 	}
 	.individual-project p {
 		font-size: 1.4rem;
-		margin-left: 15px;
-		margin-right: 15px;
+		margin-left: 0.9375rem;
+		margin-right: 0.9375rem;
 	}
 	.single .live-site {
 		font-size: 1.5rem;
-		padding: 0.5rem;
-		margin: 0.5rem;
+	}
+	.single .live-site:hover {
+		color: #17252a;
 	}
 	.single h2 {
 		font-size: 1.65rem;
@@ -1195,16 +1210,17 @@ textarea {
 		grid-column: 1/4;
 		grid-row: 1/2;
 	}
-	.overview {
+	.content-overview {
 		grid-column: 1/3;
 		grid-row: 2/3;
-		background-color: #17252a;
 		color: #feffff;
 	}
 	.tech {
 		grid-column: 3/4;
 		grid-row: 2/3;
-		background-color: #ed6ea0;
+	}
+	.tech h2 {
+		color: #17252a;
 	}
 	.process {
 		margin-top: 0;
@@ -1214,7 +1230,6 @@ textarea {
 	.reflection {
 		grid-column: 1/4;
 		grid-row: 4/5;
-		background-color: #17252a;
 		color: #feffff;
 	}
 	.postid-30 .video-content {
@@ -1226,7 +1241,6 @@ textarea {
 		grid-row: 1/2;
 	}
 	.postid-30 .video-text {
-		background-color: #ed6ea0;
 		grid-column: 1/2;
 		grid-row: 1/2;
 	}
@@ -1236,7 +1250,7 @@ textarea {
 	}
 	.btn-1,
 .btn-2 {
-		margin: 20px;
+		margin: 1.25rem;
 		height: 55px;
 		font-size: 1.4rem;
 	}
@@ -1251,9 +1265,6 @@ textarea {
 	.single-portfolio-projects h2 {
 		font-size: 2.25rem;
 	}
-	.individual-project {
-		grid-template-rows: auto 400px 1fr 350px;
-	}
 	.single .icon-images img {
 		width: 75px;
 		height: 75px;
@@ -1263,10 +1274,6 @@ textarea {
 		font-size: 1.3rem;
 	}
 }
-/* Portfolio Page */
-/* Capstone Page */
-/* Shopify Page */
-/* Movie Database Page */
 /* About Page */
 .page-template-default .entry-header {
 	display: none;
@@ -1289,11 +1296,12 @@ textarea {
 .contact-me {
 	display: flex;
 	justify-content: center;
-	align-items: baseline;
+	flex-direction: column;
+	text-align: center;
 }
 
-.contact h3 {
-	margin-bottom: 2rem;
+.contact-me h3 {
+	margin-bottom: 0;
 }
 
 .social-navigation svg {
@@ -1310,6 +1318,8 @@ textarea {
 
 .about-container p {
 	margin-bottom: 0;
+	margin-left: 0.9375rem;
+	margin-right: 0.9375rem;
 }
 
 .page-id-11 .attachment-large {
@@ -1323,29 +1333,14 @@ textarea {
 	.about-page-title h1 {
 		font-size: 3rem;
 	}
-	.about-container {
-		display: grid;
-		grid-template-columns: repeat(3, 1fr);
-		margin: 15px;
-		gap: 0.75rem;
-	}
-	.about-me {
-		grid-column: 1/4;
-		grid-row: 1/3;
-	}
 	.about-container p {
 		font-size: 1.25rem;
 	}
 	.contact-me {
-		display: flex;
+		flex-direction: row;
 		justify-content: center;
 		align-items: baseline;
-		grid-column: 1/4;
-		grid-row: 3/4;
-	}
-	.about-image {
-		grid-column: 1/4;
-		grid-row: 4/5;
+		margin: 4rem 0;
 	}
 }
 @media screen and (min-width: 50em) {

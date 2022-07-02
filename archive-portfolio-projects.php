@@ -39,9 +39,12 @@ get_header();
 						<?php the_post_thumbnail('medium'); ?>	
 						<figcaption class="content-details fade-in-left">	
 							<h2 class="project-title"><?php the_title(); ?></h2>
-							<?php if( get_field('tech_stack') ): ?> 
+							<?php 
+							if( get_field('tech_stack') ): ?> 
 								<p><?php the_field('tech_stack') ?> </p>
-							<?php endif; ?> 
+							<?php 
+							endif; 
+							?> 
 						</figcaption>						
 						</div>
 						</a>						
