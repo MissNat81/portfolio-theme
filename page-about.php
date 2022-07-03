@@ -19,21 +19,17 @@ get_header();
 		
 		<?php
 			while ( have_posts() ) :
-				the_post();
-			
-				?>
-				
-				
+				the_post();			
+				?>			
 					<header class="about-page-title">
-					<h1>This is<span class="dark-font"> me</span></h1>
+						<h1>This is<span class="dark-font"> me</span></h1>
 					</header>
 	
-					<section class="about-container">
-					
+					<section class="about-container">					
 					
 						<article class="about-me">	
 							<?php		
-							if (function_exists ('get_field') ) :
+							if ( function_exists ('get_field') ) :
 			
 				// $image = get_field('hero_image');
 				// 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
@@ -42,39 +38,36 @@ get_header();
 				// 	endif;
 		
 
-							if (get_field( 'about_me_text' ) ) :
-								?>
-								<p><?php the_field('about_me_text'); ?></p>
-								<?php
-							endif;
+								if ( get_field( 'about_me_text' ) ) :
+									?>
+									<p><?php the_field('about_me_text'); ?></p>
+									<?php
+								endif;
 					
-							endif;
+							
 							?>
 						</article>
 
-						<article class="contact-me">
-					
-							<h3>Want to get in touch?</h3>
-
-							<nav id="social-navigation" class="social-navigation">
-							<?php wp_nav_menu(array('theme_location' => 'social')); ?>
-							</nav>
-						</article>
-				
+						<article class="contact-me">								
+								<h3><?php the_field('header');?></h3>
+								<nav id="social-navigation" class="social-navigation">
+								<?php wp_nav_menu(array('theme_location' => 'social')); ?>
+								</nav>
+						</article>		
 					
 				
 						<figure class="about-image">
-						<?php
-						if(function_exists ('get_field')) :
-						$image = get_field('hero_image');
-						$size = 'large'; // (thumbnail, medium, large, full or custom size)
-							if( $image ) :
-								echo wp_get_attachment_image( $image, $size );					
+								<?php
+								$image = get_field('hero_image');
+								$size = 'large'; // (thumbnail, medium, large, full or custom size)
+								if( $image ) :
+									echo wp_get_attachment_image( $image, $size );					
+								endif;					
+							?>		
+						</figure>
+							<?php	
 							endif;
-						endif;
-						?>		
-					</figure>	
-
+						?>
 				</section>
 				<?php
 			

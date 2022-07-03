@@ -715,7 +715,7 @@ textarea {
 		height: 4px;
 		left: 50%;
 		position: absolute;
-		background: #def2f1;
+		background: #cb2d6f;
 		transition: width 0.3s ease 0s, left 0.3s ease 0s;
 		width: 0;
 	}
@@ -973,6 +973,7 @@ textarea {
 .single .project-header {
 	margin-top: 1.5rem;
 	text-align: center;
+	margin-bottom: 1.5rem;
 }
 
 .single .project-title {
@@ -1000,19 +1001,62 @@ textarea {
 	font-size: 1.25rem;
 }
 
-.single .link-site {
-	display: flex;
-	justify-content: space-between;
+.content-overview,
+.process {
+	margin-bottom: 1rem;
 }
 
-.single .live-site {
+.single .link-site {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.single .live-site,
+.single .github-site {
 	display: inline-block;
-	color: #def2f1;
-	font-size: 1rem;
-	text-decoration: none;
-	border: 2px solid #def2f1;
 	padding: 0.5rem;
-	margin: 0.5rem;
+	margin-right: 0.5rem;
+	border-radius: 10rem;
+	text-decoration: none;
+	color: #feffff;
+	font-size: 1rem;
+	transition: all 0.3s;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+}
+.single .live-site:after,
+.single .github-site:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #cb2d6f;
+	border-radius: 10rem;
+	z-index: -2;
+}
+.single .live-site:before,
+.single .github-site:before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 0%;
+	height: 100%;
+	background-color: #8c1f4d;
+	transition: all 0.3s;
+	border-radius: 10rem;
+	z-index: -1;
+}
+.single .live-site:hover,
+.single .github-site:hover {
+	color: #feffff;
+}
+.single .live-site:hover:before,
+.single .github-site:hover:before {
+	width: 100%;
 }
 
 .single .icon-images img {
@@ -1114,7 +1158,7 @@ textarea {
 }
 
 .nav-title {
-	color: white;
+	color: #f2ffff;
 	font-size: 0.875rem;
 }
 
@@ -1134,7 +1178,7 @@ textarea {
 	display: block;
 	height: 0.25rem;
 	left: 50%;
-	background: #def2f1;
+	background: #cb2d6f;
 	position: absolute;
 	transition: width 0.3s ease 0s, left 0.3s ease 0s;
 	width: 0;
@@ -1147,7 +1191,7 @@ textarea {
 }
 
 .nav-links a {
-	background-image: linear-gradient(to right, #17252a, #17252a 50%, #fff 50%);
+	background-image: linear-gradient(to right, #17252a, #17252a 50%, #feffff 50%);
 	background-size: 200% 100%;
 	background-position: -100%;
 	-webkit-background-clip: text;
@@ -1196,12 +1240,6 @@ textarea {
 		margin-left: 0.9375rem;
 		margin-right: 0.9375rem;
 	}
-	.single .live-site {
-		font-size: 1.5rem;
-	}
-	.single .live-site:hover {
-		color: #17252a;
-	}
 	.single h2 {
 		font-size: 1.65rem;
 		padding: 0.5rem;
@@ -1230,7 +1268,6 @@ textarea {
 	.reflection {
 		grid-column: 1/4;
 		grid-row: 4/5;
-		color: #feffff;
 	}
 	.postid-30 .video-content {
 		grid-template-columns: repeat(3, 1fr);
@@ -1264,6 +1301,12 @@ textarea {
 	}
 	.single-portfolio-projects h2 {
 		font-size: 2.25rem;
+	}
+	.single .live-site,
+.single .github-site {
+		padding: 0.75rem 1.25rem;
+		letter-spacing: 0.15rem;
+		font-size: 1.25rem;
 	}
 	.single .icon-images img {
 		width: 75px;
@@ -1304,16 +1347,28 @@ textarea {
 	margin-bottom: 0;
 }
 
-.social-navigation svg {
-	fill: #feffff;
-	width: 28px;
-	height: 28px;
+.link-container {
+	background-color: #17252a;
 }
 
 .social-navigation ul {
+	display: inline-block;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	list-style: none;
 	margin: 0;
 	padding: 1rem;
+}
+
+.social-navigation li {
+	margin: 0.5rem;
+}
+
+.social-navigation svg {
+	fill: #feffff;
+	width: 36px;
+	height: 36px;
 }
 
 .about-container p {
@@ -1337,17 +1392,21 @@ textarea {
 		font-size: 1.25rem;
 	}
 	.contact-me {
-		flex-direction: row;
-		justify-content: center;
-		align-items: baseline;
 		margin: 4rem 0;
+	}
+	.contact-me h3 {
+		font-size: 2.5rem;
+	}
+	.social-navigation svg {
+		width: 48px;
+		height: 48px;
 	}
 }
 @media screen and (min-width: 50em) {
 	.about-page-title h1 {
 		font-size: 3.5rem;
 	}
-	.about p {
+	.about-container p {
 		font-size: 1.5rem;
 	}
 }

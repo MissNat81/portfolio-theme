@@ -174,17 +174,6 @@ function portfolio_theme_scripts() {
 		);
 	}
 
-	// Enqueue Image Hover on Archive Projects Page
-	if (is_post_type_archive ( 'portfolio-projects' )) {
-		wp_enqueue_script(
-			'image-hover',
-			get_template_directory_uri() . '/js/image-hover.js',
-			array('jquery'),
-			'_S_VERSION',
-			true
-		);
-	}
-
 }
 add_action( 'wp_enqueue_scripts', 'portfolio_theme_scripts' );
 
