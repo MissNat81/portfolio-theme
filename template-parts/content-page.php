@@ -16,12 +16,6 @@
 	</header><!-- .entry-header -->
 
 	<?php 
-	// if (is_singular() ) {
-	// 	the_post_thumbnail('portrait-medium-projects'); 
-	// 	return;
-	// } else {
-	// 	the_post_thumbnail('portrait-projects');
-	// }
 
 	if (!is_singular() ) {
 		the_post_thumbnail('portrait-projects');

@@ -36,7 +36,7 @@ get_header();
 						<a href="<?php the_permalink(); ?>">
 						<div class="content">
 							<div class="content-overlay"></div>						
-						<?php the_post_thumbnail('medium'); ?>	
+						<?php the_post_thumbnail('large'); ?>	
 						<figcaption class="content-details fade-in-left">	
 							<h2 class="project-title"><?php the_title(); ?></h2>
 							<?php 
@@ -49,7 +49,6 @@ get_header();
 						</div>
 						</a>						
 					</figure>
-
 					<?php
 				endwhile;
 				wp_reset_postdata();

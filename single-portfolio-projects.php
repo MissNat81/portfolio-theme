@@ -184,13 +184,7 @@ get_header();
 								<p><?php the_field( 'development_content' ); ?></p>
 								<?php
 								?>
-								<div class="video-content">									
-									<div class="video">
-										<?php
-										if (is_single(30) ) :											
-										get_template_part( 'template-parts/content', 'page' );						endif;										
-										?>
-									</div>
+														
 									<div class="video-text">
 									<?php
 										if (get_field( 'video_text' ) ) :
@@ -200,9 +194,10 @@ get_header();
 										endif;
 										?>
 									</div>
-									
-								</div>
-								<?php
+									<?php
+										if (is_single(30) ) :											
+										get_template_part( 'template-parts/content', 'page' );						endif;										
+										
 							endif;
 							?>
 						</div>			

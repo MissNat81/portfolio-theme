@@ -41,7 +41,8 @@ get_header();
 							);
 							?>
 						</ul>
-					</div><!-- .widget -->
+					</div>
+					<!-- .widget -->
 
 					<?php
 					/* translators: %1$s: smiley */
