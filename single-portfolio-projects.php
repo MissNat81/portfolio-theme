@@ -16,10 +16,11 @@ get_header();
 		while ( have_posts() ) :
 			the_post();
 			?>
-			<div class="project-header">
+			<section class="project-header">
 				<h1 class="project-title"><?php the_title(); ?></h1>
-			</div>
-			<article class="individual-project">
+			</section>
+
+			<section class="individual-project">
 			<?php				
 
 				if ( function_exists ( 'get_field' ) ) :
@@ -31,99 +32,99 @@ get_header();
 					endif;
 				?>
 
-					<div class="content-overview">
+				<section class="content-overview">
 				<?php
-						if ( get_field( 'about_header' ) ) :
-							?>
-							<h2><?php the_field( 'about_header' ); ?></h2>
-							<?php
-						endif;
-		
-						if (get_field ( 'project_overview' ) ) :
-							?>
-							<p class="overview"><?php the_field( 'project_overview' ); ?></p>
-							<?php
-							if( get_field ( 'collaborators_title' ) ) : 
-								?>
-								<h2><?php the_field( 'collaborators_title' ) ;?></h2>
-								<?php
-							endif;
-							if ( get_field ( 'collaborators' ) ) :
-								?>
-								<p><?php the_field( 'collaborators' );?></p>
-								<?php
-							endif;
-							?>
-							<div class="link-site">
-							<?php						
-								$link = get_field( 'link' );
-								if( $link ) : 
-									$link_url = $link['url'];
-	  								$link_title = $link['title'];
-									$link_target = $link['target'] ? $link['target'] : '_self';
-									?>
-									<a class="live-site" href="<?php echo esc_url( $link_url ); ?>"
-									target="<?php echo esc_attr( $link_target ); ?>
-									"><?php echo esc_html( $link_title ); ?>
-									</a>							
-									<?php
-								endif;	
-								$link = get_field( 'link2' );
-								if( $link ) : 
-									$link_url = $link['url'];
-	  								$link_title = $link['title'];
-									$link_target = $link['target'] ? $link['target'] : '_self';
-									?>
-									<a class="github-site" href="<?php echo esc_url( $link_url ); ?>"
-									target="<?php echo esc_attr( $link_target ); ?>
-									"><?php echo esc_html( $link_title ); ?>
-									</a>							
-									<?php
-								endif;	
-								?>
-							</div>
-							<?php
-						endif;
-						?>
-					</div>
-
-					<div class="tech">
+					if ( get_field( 'about_header' ) ) :
+					?>
+						<h2><?php the_field( 'about_header' ); ?></h2>
 					<?php
-						if ( get_field ( 'tech_stack_title' ) ) :
-							?>
-							<h2><?php the_field( 'tech_stack_title' ); ?></h2>
-							<?php
+					endif;
+		
+					if (get_field ( 'project_overview' ) ) :
+						?>
+						<p class="overview"><?php the_field( 'project_overview' ); ?></p>
+						<?php
+						if( get_field ( 'collaborators_title' ) ) : 
+						?>
+							<h2><?php the_field( 'collaborators_title' ) ;?></h2>
+						<?php
+						endif;
+						if ( get_field ( 'collaborators' ) ) :
+						?>
+							<p><?php the_field( 'collaborators' );?></p>
+						<?php
 						endif;
 						?>
-						<div class="icon-images">
-						<?php
-							if ( have_rows ( 'icons' ) ) :
-								while ( have_rows( 'icons' ) ): 
-									the_row();
-									$image = get_sub_field( 'icon' );
-    								$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-									if( $image ) :
-        								echo wp_get_attachment_image( $image, $size );	
-    								endif;
-								endwhile;
-							endif;
-						
-							if ( get_field ( 'role_title' ) ) : 
-								?>
-								<h2><?php the_field( 'role_title' ) ;?></h2>
-								<?php
-							endif;
-							if ( get_field ( 'roles' ) ) :
-								?>
-								<p><?php the_field( 'roles' );?></p>
-								<?php
-							endif;							
-							?>						
+						<div class="link-site">
+						<?php						
+							$link = get_field( 'link' );
+							if( $link ) : 
+								$link_url = $link['url'];
+	  							$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+							?>
+								<a class="live-site" href="<?php echo esc_url( $link_url ); ?>"
+								target="<?php echo esc_attr( $link_target ); ?>
+								"><?php echo esc_html( $link_title ); ?>
+								</a>							
+							<?php
+							endif;	
+							$link = get_field( 'link2' );
+							if( $link ) : 
+								$link_url = $link['url'];
+	  							$link_title = $link['title'];
+								$link_target = $link['target'] ? $link['target'] : '_self';
+							?>
+								<a class="github-site" href="<?php echo esc_url( $link_url ); ?>"
+								target="<?php echo esc_attr( $link_target ); ?>
+								"><?php echo esc_html( $link_title ); ?>
+								</a>							
+							<?php
+							endif;	
+							?>
 						</div>
+						<?php
+					endif;
+					?>
+				</section>
+
+				<section class="tech">
+				<?php
+					if ( get_field ( 'tech_stack_title' ) ) :
+					?>
+						<h2><?php the_field( 'tech_stack_title' ); ?></h2>
+					<?php
+					endif;
+					?>
+					<div class="icon-images">
+					<?php
+						if ( have_rows ( 'icons' ) ) :
+							while ( have_rows( 'icons' ) ): 
+								the_row();
+								$image = get_sub_field( 'icon' );
+    							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+								if( $image ) :
+        							echo wp_get_attachment_image( $image, $size );	
+    							endif;
+							endwhile;
+						endif;
+						
+						if ( get_field ( 'role_title' ) ) : 
+						?>
+							<h2><?php the_field( 'role_title' ) ;?></h2>
+						<?php
+						endif;
+						if ( get_field ( 'roles' ) ) :
+						?>
+							<p><?php the_field( 'roles' );?></p>
+						<?php
+						endif;							
+						?>						
 					</div>
+				</section>
 				
 
-					<section class="process">
+				<section class="process">
 					<div class="btn-process">
 					<?php
 						if (get_field ( 'design_title' ) ) :
@@ -155,7 +156,7 @@ get_header();
 									if ( $image ) :
 										echo wp_get_attachment_image( $image, $size );
 									endif;									
-									if (!$image) :
+									if (!$image ) :
 										?>
 										<hr>
 										<?php
@@ -170,7 +171,15 @@ get_header();
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
 										echo wp_get_attachment_image( $image, $size );
-								endif;
+									endif;
+									?>
+									<p><?php the_sub_field( 'content3' ); ?></p>
+									<?php
+									$image = get_sub_field ('image3');
+									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
+									if ( $image ) :
+										echo wp_get_attachment_image( $image, $size );
+									endif;									
 								endwhile;
 							endif;			
 							?>
@@ -178,55 +187,63 @@ get_header();
 
 						<div class="content2">
 							<?php
-						
-							if ( get_field ( 'development_content' ) ) :
-								?>
-								<p><?php the_field( 'development_content' ); ?></p>
-								<?php
-								?>
-														
-									<div class="video-text">
+							if ( have_rows( 'development_content' ) ) :
+								while (have_rows('development_content') ) :
+									the_row();
+									?>
+									<p><?php the_sub_field( 'content_dev1' ); ?></p>
 									<?php
-										if (get_field( 'video_text' ) ) :
-										?>									
-											<p><?php the_field( 'video_text' ); ?></p>
-										<?php
-										endif;
+									$image = get_sub_field ('image_dev1');
+									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
+									if ( $image ) :
+										echo wp_get_attachment_image( $image, $size );
+									endif;									
+									if (!$image ) :
 										?>
-									</div>
-									<?php
-										if (is_single(30) ) :											
-										get_template_part( 'template-parts/content', 'page' );						endif;										
-										
-							endif;
+										<hr>
+										<?php
+									endif;
+									?>	
+									<p><?php the_sub_field( 'content_dev3' ); ?></p>								
+									<?php						
+									if (is_single(30) ) :											
+									get_template_part( 'template-parts/content', 'page' );						endif;								
+									?>								
+									<p><?php the_sub_field( 'content_dev2' ); ?></p>
+									<?php																			
+									$image = get_sub_field ('image_dev2');
+									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
+									if ( $image ) :
+										echo wp_get_attachment_image( $image, $size );
+									endif;
+								endwhile;
+							endif;												
 							?>
 						</div>			
 					</div>
-					</section>
+				</section>
 
-					<section class="reflection">
-						<div class="reflection-content">
-							<?php
-							if ( get_field( 'reflection_title' ) ) :
-								?>
-								<h2><?php the_field( 'reflection_title' );?></h2>
-								<?php
-							endif;
-
-							if (get_field( 'reflection_content' ) ) :
-								?>
-								<p><?php the_field( 'reflection_content' );?></p>
-								<?php
-							endif;
-							?>
-						</div>
-					</section>
-					
+				<section class="reflection">
 					<?php
+					if ( get_field( 'reflection_title' ) ) :
+					?>
+						<h2><?php the_field( 'reflection_title' );?></h2>
+					<?php
+					endif;
+
+					if (get_field( 'reflection_content' ) ) :
+					?>
+						<p><?php the_field( 'reflection_content' );?></p>
+					<?php
+					endif;
+					?>
+				</section>
+					
+				<?php
 
 				endif;
 			?>
-			</article>
+			</section>
 			<?php
 
 			
