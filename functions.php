@@ -166,13 +166,22 @@ function portfolio_theme_scripts() {
 	// Enqueue Hide/Show on Buttons on Single Projects Page
 	if (is_singular ( 'portfolio-projects' ) ) {
 		wp_enqueue_script(
-			'hide-show',
-			get_template_directory_uri() . '/js/hide-show.js',
+			'hide-show-content',
+			get_template_directory_uri() . '/js/hide-show-content.js',
 			array('jquery'),
 			'_S_VERSION',
 			true
 		);
 	}
+
+	// Enqueue Dark Mode //
+		wp_enqueue_script(
+			'dark-mode',
+			get_template_directory_uri() . '/js/dark-mode.js',
+			array('jquery'),
+			'_S_VERSION',
+			true
+		);
 
 }
 add_action( 'wp_enqueue_scripts', 'portfolio_theme_scripts' );

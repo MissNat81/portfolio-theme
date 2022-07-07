@@ -1,11 +1,3 @@
-// jQuery(".title1").on("click", function () {
-//   jQuery(".content1").toggle();
-// });
-
-// jQuery(".title2").on("click", function () {
-//   jQuery(".content2").toggle();
-// });
-
 jQuery(document).ready(function () {
   jQuery(".content2").hide();
 });

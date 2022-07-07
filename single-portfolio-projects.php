@@ -149,12 +149,12 @@ get_header();
 								while (have_rows('design_content') ) :
 									the_row();
 									?>
-									<p><?php the_sub_field( 'content1' ); ?></p>
+									<p class="content_1"><?php the_sub_field( 'content1' ); ?></p>
 									<?php
 									$image = get_sub_field ('image1');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_1", "alt" => "screenshot of site" ] );
 									endif;									
 									if (!$image ) :
 										?>
@@ -162,7 +162,7 @@ get_header();
 										<?php
 									endif;
 									?>								
-									<p><?php the_sub_field( 'content2' ); ?></p>
+									<p class="content_2"><?php the_sub_field( 'content2' ); ?></p>
 									<?php
 									if ( is_single( 28 ) ) :										
 									get_template_part( 'template-parts/content', 'page' );
@@ -170,15 +170,15 @@ get_header();
 									$image = get_sub_field ('image2');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_2", "alt" => "screenshot of site" ] );
 									endif;
 									?>
-									<p><?php the_sub_field( 'content3' ); ?></p>
+									<p class="content_3"><?php the_sub_field( 'content3' ); ?></p>
 									<?php
 									$image = get_sub_field ('image3');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_3", "alt" => "screenshot of site" ] );
 									endif;									
 								endwhile;
 							endif;			
@@ -191,12 +191,12 @@ get_header();
 								while (have_rows('development_content') ) :
 									the_row();
 									?>
-									<p><?php the_sub_field( 'content_dev1' ); ?></p>
+									<p class="content_dev_1"><?php the_sub_field( 'content_dev1' ); ?></p>
 									<?php
 									$image = get_sub_field ('image_dev1');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_dev_1", "alt" => "screenshot of site" ] );
 									endif;									
 									if (!$image ) :
 										?>
@@ -204,17 +204,18 @@ get_header();
 										<?php
 									endif;
 									?>	
-									<p><?php the_sub_field( 'content_dev3' ); ?></p>								
-									<?php						
+									<p class="content_dev_2"><?php the_sub_field( 'content_dev2' ); ?></p>	
+									<?php	
+															
 									if (is_single(30) ) :											
 									get_template_part( 'template-parts/content', 'page' );						endif;								
 									?>								
-									<p><?php the_sub_field( 'content_dev2' ); ?></p>
+									<p class="content_dev_3"><?php the_sub_field( 'content_dev3' ); ?></p>
 									<?php																			
 									$image = get_sub_field ('image_dev2');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_dev_2", "alt" => "screenshot of site" ] );
 									endif;
 								endwhile;
 							endif;												

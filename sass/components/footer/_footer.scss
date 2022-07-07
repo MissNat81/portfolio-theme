@@ -5,8 +5,8 @@
   // bottom: 0;
   // width: 100%;
   // margin-top: 0;
-  // background-color: $color__background-footer;
-  background-color: #def2f1;
+  background-color: $color__background-footer;
+  // border-top: 1px solid #def2f1;
 }
 
 .site-footer a {
@@ -19,7 +19,8 @@
 
 .site-footer p {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem 0;
+  margin-top: 0;
 }
 
 .footer-menu {
@@ -41,7 +42,6 @@
 
 @media screen and (min-width: 38.5em) {
   .footer-navigation {
-    // display: none;
     visibility: hidden;
   }
 
