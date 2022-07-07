@@ -16,19 +16,7 @@ get_header();
 ?>
 
 	<main id="primary" class="site-main">
-	<!-- <section class="introduction">
-			<div class="intro-container">
-			<?php
-			if (function_exists('get_field') ) {
-				if (get_field('intro_text')) {
-					echo '<p class="line-1 anim-typewriter">';
-					the_field('intro_text');
-					echo '</p>';
-				}
-			}
-			?>
-			</div>
-		</section> -->
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -46,5 +34,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();

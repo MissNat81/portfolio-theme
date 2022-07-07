@@ -94,18 +94,31 @@ get_header();
 					?>
 						<h2><?php the_field( 'tech_stack_title' ); ?></h2>
 					<?php
+						$link = get_sub_field( 'icon8_link' );
+						if( $link ) : 
+    						$link_url = $link['url'];
+   							$link_title = $link['title'];
+    						$link_target = $link['target'] ? $link['target'] : '_self';
+    						?>
+							<a class="icons8-link" href="<?php echo esc_url( $link_url ); ?>"
+    							target="<?php echo esc_attr( $link_target ); ?>
+    							"><?php echo esc_html( $link_title ); ?>
+								<p><?php the_field('icons8_title');?></p>
+							</a>
+							<?
+						endif;
 					endif;
 					?>
 					<div class="icon-images">
 					<?php
 						if ( have_rows ( 'icons' ) ) :
 							while ( have_rows( 'icons' ) ): 
-								the_row();
+								the_row();								
 								$image = get_sub_field( 'icon' );
     							$size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 								if( $image ) :
         							echo wp_get_attachment_image( $image, $size );	
-    							endif;
+    							endif;						
 							endwhile;
 						endif;
 						
@@ -137,7 +150,7 @@ get_header();
 							?>
 							<button class="btn-2"><?php the_field( 'development_title' ); ?></button>
 							<?php
-							endif;
+						endif;
 						
 						?>
 					</div> 

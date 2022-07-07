@@ -1,12 +1,12 @@
 body {
   background: $color__background-body; // Fallback for when there is no custom background color defined.
   width: 100%;
-  height: 100vh;
   // overflow-y: hidden;
 }
 
 body.dark-mode * {
-  background: #080707;
+  // background: #080707;
+  background: #17252a;
 }
 
 body.dark-mode .dark-font {
@@ -15,13 +15,6 @@ body.dark-mode .dark-font {
 
 body.dark-mode h1,
 body.dark-mode h2,
-body.dark-mode p,
-body.dark-mode .nav-title,
-body.dark-mode .nav-subtitle {
+body.dark-mode p {
   color: #feffff;
 }
-
-// .dark-mode .nav-title,
-// .dark-mode .nav-subtitle {
-//   color: #feffff;
-// }

@@ -169,7 +169,7 @@ function portfolio_theme_scripts() {
 			'hide-show-content',
 			get_template_directory_uri() . '/js/hide-show-content.js',
 			array('jquery'),
-			'_S_VERSION',
+			_S_VERSION,
 			true
 		);
 	}
@@ -179,7 +179,7 @@ function portfolio_theme_scripts() {
 			'dark-mode',
 			get_template_directory_uri() . '/js/dark-mode.js',
 			array('jquery'),
-			'_S_VERSION',
+			_S_VERSION,
 			true
 		);
 

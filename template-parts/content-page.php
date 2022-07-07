@@ -17,9 +17,9 @@
 
 	<?php 
 
-	if (!is_singular() ) {
+	if (!is_singular() ) :
 		the_post_thumbnail('portrait-projects');
-	}
+	endif;
 	?>
 
 	
