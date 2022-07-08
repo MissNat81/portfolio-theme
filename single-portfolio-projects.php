@@ -156,11 +156,6 @@ get_header();
 									if ( $image ) :
 										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_1", "alt" => "screenshot of site" ] );
 									endif;									
-									if (!$image ) :
-										?>
-										<hr>
-										<?php
-									endif;
 									?>								
 									<p class="content_2"><?php the_sub_field( 'content2' ); ?></p>
 									<?php
