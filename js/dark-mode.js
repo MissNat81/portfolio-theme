@@ -1,5 +1,6 @@
 jQuery(function ($) {
-  /*Click on dark mode icon. Add dark mode classes and wrappers. 
+  /*Click on dark mode icon. Add dark mode classes 
+    and wrappers. 
     Store user preference through sessions*/
   jQuery(".wpnm-button").click(function () {
     //Show either moon or sun

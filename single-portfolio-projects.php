@@ -94,19 +94,6 @@ get_header();
 					?>
 						<h2><?php the_field( 'tech_stack_title' ); ?></h2>
 					<?php
-						$link = get_sub_field( 'icon8_link' );
-						if( $link ) : 
-    						$link_url = $link['url'];
-   							$link_title = $link['title'];
-    						$link_target = $link['target'] ? $link['target'] : '_self';
-    						?>
-							<a class="icons8-link" href="<?php echo esc_url( $link_url ); ?>"
-    							target="<?php echo esc_attr( $link_target ); ?>
-    							"><?php echo esc_html( $link_title ); ?>
-								<p><?php the_field('icons8_title');?></p>
-							</a>
-							<?
-						endif;
 					endif;
 					?>
 					<div class="icon-images">
@@ -222,13 +209,19 @@ get_header();
 															
 									if (is_single(30) ) :											
 									get_template_part( 'template-parts/content', 'page' );						endif;								
-									?>								
-									<p class="content_dev_3"><?php the_sub_field( 'content_dev3' ); ?></p>
-									<?php																			
+																											
 									$image = get_sub_field ('image_dev2');
 									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
 									if ( $image ) :
 										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_dev_2", "alt" => "screenshot of site" ] );
+									endif;
+									?>								
+									<p class="content_dev_3"><?php the_sub_field( 'content_dev3' ); ?></p>
+									<?php	
+									$image = get_sub_field ('image_dev3');
+									$size  = 'large'; // (thumbnail, medium, large, full or custom size)
+									if ( $image ) :
+										echo wp_get_attachment_image( $image, $size, "", ["class" => "image_dev_3", "alt" => "screenshot of site" ] );
 									endif;
 								endwhile;
 							endif;												

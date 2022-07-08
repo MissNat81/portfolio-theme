@@ -1,13 +1,3 @@
-.site {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-.site-main {
-  flex-grow: 1;
-}
-
 .sticky {
   display: block;
 }
@@ -257,11 +247,11 @@
 }
 
 .individual-project p {
-  font-size: 1rem;
+  font-size: 1.125rem;
 }
 
 .single h2 {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
 }
 
 .content-overview,
@@ -354,7 +344,6 @@
   text-align: center;
   border: none;
   background-size: 300% 100%;
-
   border-radius: 50px;
   moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -412,8 +401,7 @@
 }
 
 .content-process hr {
-  background-color: #2b7a78;
-  height: 2px;
+  background-color: $color__background-hr;
   width: 75%;
 }
 
@@ -422,19 +410,14 @@
   max-width: 1024px;
 }
 
-.nav-title {
-  // color: #feffff;
-  font-size: 0.875rem;
-}
-
 .nav-links a {
-  color: #feffff;
+  color: $color__link;
   display: inline-block;
   position: relative;
   text-decoration: none;
   margin: 0.3125rem;
   border: none;
-  // font-size: 0.875rem;
+  font-size: 0.875rem;
 }
 
 .nav-links a:after {
@@ -472,18 +455,9 @@
 }
 
 .dark-mode .nav-links a {
-  background-image: linear-gradient(
-    to right,
-    $color__background-body,
-    $color__background-body 50%,
-    #feffff 50%
-  );
-  background-size: 200% 100%;
   background-position: -100%;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: #feffff;
-  transition: all 0.3s ease-in-out;
-  text-transform: uppercase;
+  -webkit-text-fill-color: $color__link-dark;
 }
 
 .nav-links a:before {
@@ -499,17 +473,6 @@
 
 .nav-links a:hover {
   background-position: 0;
-}
-
-.dark-mode .nav-links a:before {
-  content: "";
-  background: $color__background-body;
-  display: block;
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 3px;
 }
 
 @media screen and (min-width: 26.25em) {
@@ -591,7 +554,7 @@
     font-size: 1.4rem;
   }
 
-  /* Design & Development Grid */
+  /* Design & Development Grid - All Projects */
 
   .content-process img {
     width: 100%;
@@ -652,9 +615,9 @@
     grid-row: 2 / 3;
   }
 
-  // .postid-29 .content_dev_3 {
-  //   display: none;
-  // }
+  .postid-29 .content_dev_3 {
+    display: none;
+  }
 
   /* BCMD Grid */
   .postid-30 .content_1 {
@@ -662,7 +625,7 @@
     grid-row: 1 / 2;
   }
 
-  .postid-30 .image_2 {
+  .postid-30 .image_1 {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
@@ -670,6 +633,11 @@
   .postid-30 .content_2 {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+  }
+
+  .postid-30 .image_2 {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
   }
 
   .postid-30 .content_dev_1 {
@@ -691,11 +659,6 @@
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
-
-  // .wp-block-syntaxhighlighter-code {
-  //   grid-column: 2 / 3;
-  //   grid-row: 3 / 4;
-  // }
 
   .postid-30 .content_dev_3 {
     grid-column: 1 / 2;
@@ -728,6 +691,10 @@
     grid-row: 2 / 3;
   }
 
+  .postid-28 .content_3 {
+    display: none;
+  }
+
   .postid-28 .content_dev_1 {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -747,8 +714,8 @@
     grid-column: 1 / 2;
     grid-row: 2 / 3;
   }
-  /* Take a Hike Outfitters Grid */
 
+  /* Take a Hike Outfitters Grid */
   .postid-27 .content_1 {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
@@ -774,13 +741,43 @@
     grid-row: 3 / 4;
   }
 
-  .postid-27 .image_ {
+  .postid-27 .image_3 {
     grid-column: 2 / 3;
     grid-row: 3 / 4;
   }
 
-  .postid-28 .content_3 {
-    display: none;
+  .postid-27 .content_dev_1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .postid-27 .image_dev_1 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .postid-27 .content_dev_2 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .postid-27 .image_dev_2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .postid-27 .content_dev_3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .postid-27 .image_dev_3 {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+  }
+
+  .nav-links {
+    margin: 0 0.75rem;
   }
 }
 
@@ -791,10 +788,10 @@
     row-gap: 50px;
   }
 
-  /* WooStore Grid */
-  // .postid-29 .content1 {
-  //   row-gap: 0;
-  // }
+  .postid-30 .content_1 {
+    text-align: center;
+    margin: 0 2rem;
+  }
 
   .postid-29 .content_1 {
     grid-column: 1 / 2;
@@ -830,10 +827,9 @@
   .postid-30 .content_1 {
     grid-column: 1 / 4;
     grid-row: 1 / 2;
-    // padding: 1rem;
   }
 
-  .postid-30 .image_2 {
+  .postid-30 .image_1 {
     grid-column: 1 / 3;
     grid-row: 2 / 3;
   }
@@ -841,6 +837,11 @@
   .postid-30 .content_2 {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+  }
+
+  .postid-30 .image_2 {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
   }
 
   .postid-30 .content_dev_1 {
@@ -944,6 +945,36 @@
     grid-column: 2 / 4;
     grid-row: 3 / 4;
   }
+
+  .postid-27 .content_dev_1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .postid-27 .image_dev_1 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+  }
+
+  .postid-27 .content_dev_2 {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+  }
+
+  .postid-27 .image_dev_2 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+  }
+
+  .postid-27 .content_dev_3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .postid-27 .image_dev_3 {
+    grid-column: 2 / 4;
+    grid-row: 3 / 4;
+  }
 }
 
 @media screen and (min-width: 50em) {
@@ -982,6 +1013,12 @@
   .nav-subtitle,
   .nav-title {
     font-size: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 68em) {
+  .postid-30 .content_1 {
+    margin: 0 8rem;
   }
 }
 
@@ -1053,8 +1090,8 @@
   width: 50%;
 }
 
-.social-navigation a:hover,
-.social-navigation a:active {
+.social-navigation svg:hover,
+.social-navigation svg:active {
   fill: #cb2d6f;
 }
 
@@ -1177,6 +1214,7 @@
 .search .site-main,
 .search .widget-area {
   margin: 0 1rem;
+  color: #feffff;
 }
 
 .search .page-header {
@@ -1203,8 +1241,7 @@
   display: block;
   height: 0.25rem;
   left: 50%;
-  // background: #def2f1;
-  background: #cb2d6f;
+  background: #def2f1;
   position: absolute;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
@@ -1216,11 +1253,12 @@
   left: 0;
 }
 
-.search .entry-title a {
+.search .entry-title a,
+.dark-mode .search .entry-title a {
   background-image: linear-gradient(
     to right,
-    $color__link-hover,
-    $color__link-hover 50%,
+    $color2__link-background,
+    $color2__link-background 50%,
     #feffff 50%
   );
   background-size: 200% 100%;
