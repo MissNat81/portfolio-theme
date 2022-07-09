@@ -1,0 +1,18 @@
+body {
+  background: $color__background-body; // Fallback for when there is no custom background color defined.
+  width: 100%;
+}
+
+body.dark-mode * {
+  background: $color__background-body-dark;
+}
+
+body.dark-mode .dark-font {
+  color: #2b7a78;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode p {
+  color: #feffff;
+}

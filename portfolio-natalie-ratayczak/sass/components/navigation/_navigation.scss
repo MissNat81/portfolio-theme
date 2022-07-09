@@ -1,0 +1,109 @@
+.main-navigation {
+  display: none;
+}
+
+@media screen and (min-width: 38.5em) {
+  .main-navigation {
+    display: inline-block;
+    font-family: $font__header;
+  }
+
+  .main-navigation ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 0;
+  }
+
+  .main-navigation li {
+    position: relative;
+  }
+
+  .main-navigation a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem 0.5rem 0.5rem 0.5rem;
+    border: none;
+    font-size: 1.25rem;
+  }
+
+  .main-navigation a:after {
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 4px;
+    left: 50%;
+    position: absolute;
+    background: $color__link-background;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+  }
+
+  .main-navigation a:hover:after,
+  .main-navigation a:active:after {
+    width: 100%;
+    left: 0;
+  }
+
+  .main-navigation a {
+    background-image: linear-gradient(
+      to right,
+      $color__link-hover,
+      $color__link-hover 50%,
+      #fff 50%
+    );
+    background-size: 200% 100%;
+    background-position: -100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+  }
+
+  /* Dark Mode */
+  .dark-mode .main-navigation a {
+    background-image: linear-gradient(
+      to right,
+      $color__background-body,
+      $color__background-body 50%,
+      #fff 50%
+    );
+  }
+
+  .main-navigation a:before {
+    content: "";
+    background: $color__link-hover;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+  }
+
+  .main-navigation a:hover {
+    background-position: 0;
+  }
+}
+
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+  .site-main & {
+    margin: 0 0 1.5rem;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-previous {
+    flex: 1 0 50%;
+  }
+
+  .nav-next {
+    text-align: end;
+    flex: 1 0 50%;
+  }
+}
