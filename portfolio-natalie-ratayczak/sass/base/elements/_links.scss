@@ -1,0 +1,20 @@
+a {
+  color: $color__link;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:visited {
+    color: none;
+  }
+
+  &:focus {
+    outline: 1px solid $color__link;
+  }
+
+  &:hover,
+  &:active,
+  &:visited {
+    outline: 0;
+  }
+}
