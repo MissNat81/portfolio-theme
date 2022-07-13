@@ -1,9 +1,9 @@
 .site-footer {
   background-color: $color__background-footer;
-  position: sticky;
+  position: fixed;
   width: 100%;
-  left: 0;
   bottom: 0;
+  z-index: 100;
 }
 
 .site-footer a {

@@ -29,6 +29,7 @@
   padding: 3rem 1rem;
   margin-top: 2rem;
   margin-bottom: 10rem;
+  color: $color__link-visited;
 }
 
 .dark-mode .animated {
@@ -106,6 +107,9 @@
 .project-item p {
   font-size: 1rem;
   color: #feffff;
+}
+.projects:last-child {
+  margin-bottom: 6rem;
 }
 
 @media screen and (min-width: 38.625em) {
@@ -418,6 +422,7 @@
   margin: 0.3125rem;
   border: none;
   font-size: 0.875rem;
+  margin-bottom: 8rem;
 }
 
 .nav-links a:after {
@@ -500,7 +505,7 @@
   }
 
   .individual-project p {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-left: 0.9375rem;
     margin-right: 0.9375rem;
   }
@@ -771,6 +776,10 @@
   .nav-links {
     margin: 0 0.75rem;
   }
+
+  .nav-links a {
+    margin-bottom: 2rem;
+  }
 }
 
 @media screen and (min-width: 50em) {
@@ -987,10 +996,6 @@
     margin-left: 2rem;
   }
 
-  .individual-project p {
-    font-size: 1.4rem;
-  }
-
   .single .live-site,
   .single .github-site {
     padding: 0.75rem 1.25rem;
@@ -1081,6 +1086,7 @@
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  margin-bottom: 7rem;
 }
 
 .social-navigation svg:hover,
@@ -1110,6 +1116,10 @@
   .social-navigation svg {
     width: 48px;
     height: 48px;
+  }
+
+  .page-id-11 .attachment-large {
+    margin-bottom: 0;
   }
 }
 
