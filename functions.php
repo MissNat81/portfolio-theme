@@ -219,3 +219,17 @@ function portfolio_excerpt_more ( $more ) {
 		return $more;
 }
 add_filter( 'excerpt_more', 'portfolio_excerpt_more' );
+
+
+
+ // Enable dark theme mode
+// function yonkov_dark_mode($classes) {
+//     $yonkov_night_mode = isset($_COOKIE['yonkovNightMode']) ? $_COOKIE['yonkovNightMode'] : '';
+//     //if the cookie is stored..
+//     if ($yonkov_night_mode !== '') {
+//         // Add 'dark-mode' body class
+//         return array_merge($classes, array('dark-mode'));
+//     }
+//     return $classes;
+// }
+// add_filter('body_class', 'yonkov_dark_mode');

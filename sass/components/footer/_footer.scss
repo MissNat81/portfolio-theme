@@ -1,5 +1,9 @@
 .site-footer {
   background-color: $color__background-footer;
+  position: sticky;
+  width: 100%;
+  left: 0;
+  bottom: 0;
 }
 
 .site-footer a {
@@ -23,8 +27,16 @@
   margin-left: 0.25rem;
 }
 
+.site-footer .icons_link:hover {
+  color: $color__link-hover;
+}
+
 .dark-mode .site-footer .icons_link {
   color: $color__text-footer;
+}
+
+.dark-mode .site-footer .icons_link:hover {
+  color: $color__link-dark;
 }
 
 .site-info {
@@ -51,6 +63,10 @@
 }
 
 @media screen and (min-width: 38.5em) {
+  .site-footer {
+    position: relative;
+  }
+
   .footer-navigation {
     visibility: hidden;
   }

@@ -388,7 +388,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #17252a;
+	color: #feffff;
 	font-family: "Source Sans Pro", sans-serif;
 	font-size: 1rem;
 	line-height: 1.5;
@@ -486,8 +486,7 @@ body.dark-mode .dark-font {
 }
 
 body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode p {
+body.dark-mode h2 {
 	color: #feffff;
 }
 
@@ -495,6 +494,9 @@ body.dark-mode p {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	max-width: 2200px;
+	margin: 0 auto;
+	overflow: hidden;
 }
 
 .site-main {
@@ -759,6 +761,7 @@ textarea {
 	position: relative;
 	text-decoration: none;
 	font-size: 1.125rem;
+	font-weight: 600;
 	margin: 1rem;
 }
 
@@ -985,8 +988,9 @@ textarea {
 
 .animated {
 	font-size: 2.5rem;
+	font-weight: 700;
 	padding: 3rem 1rem;
-	margin-top: 4.5rem;
+	margin-top: 2rem;
 	margin-bottom: 10rem;
 }
 
@@ -1002,11 +1006,13 @@ textarea {
 @media screen and (min-width: 38.5em) {
 	.animated {
 		font-size: 4rem;
+		margin-top: 4rem;
 	}
 }
 @media screen and (min-width: 50em) {
 	.animated {
 		font-size: 5rem;
+		margin-top: 4.5rem;
 	}
 }
 @media screen and (min-width: 65.625em) {
@@ -1179,11 +1185,13 @@ textarea {
 }
 
 .individual-project p {
-	font-size: 1.125rem;
+	font-size: 1.25rem;
 }
 
 .single h2 {
 	font-size: 1.3rem;
+	color: #17252a;
+	font-weight: 700;
 }
 
 .content-overview,
@@ -1394,7 +1402,7 @@ textarea {
 @media screen and (min-width: 26.25em) {
 	.nav-subtitle,
 .nav-title {
-		font-size: 1rem;
+		font-size: 1.25rem;
 	}
 }
 @media screen and (min-width: 39.75em) {
@@ -1412,7 +1420,7 @@ textarea {
 		gap: 0.75rem;
 	}
 	.individual-project p {
-		font-size: 1.25rem;
+		font-size: 1.4rem;
 		margin-left: 0.9375rem;
 		margin-right: 0.9375rem;
 	}
@@ -1431,9 +1439,6 @@ textarea {
 	.tech {
 		grid-column: 3/4;
 		grid-row: 2/3;
-	}
-	.tech h2 {
-		color: #17252a;
 	}
 	.process {
 		margin-top: 0;
@@ -1889,6 +1894,7 @@ textarea {
 	margin-bottom: 0;
 	margin-left: 1rem;
 	margin-right: 1rem;
+	font-size: 1.25rem;
 }
 
 .page-id-11 .attachment-large {
@@ -1908,6 +1914,7 @@ textarea {
 		font-size: 3rem;
 	}
 	.about-container p {
+		font-size: 1.5rem;
 		margin-right: 2rem;
 		margin-left: 2rem;
 	}
@@ -1927,7 +1934,7 @@ textarea {
 		font-size: 3.5rem;
 	}
 	.about-container p {
-		font-size: 1.4rem;
+		font-size: 1.75rem;
 		margin-right: 5rem;
 		margin-left: 5rem;
 	}
@@ -2223,6 +2230,11 @@ textarea {
 --------------------------------------------- */
 .site-footer {
 	background-color: #3aafa9;
+	position: -webkit-sticky;
+	position: sticky;
+	width: 100%;
+	left: 0;
+	bottom: 0;
 }
 
 .site-footer a {
@@ -2241,13 +2253,21 @@ textarea {
 
 .site-footer .icons_link {
 	text-transform: none;
-	color: #17252a;
+	color: #feffff;
 	font-size: 1rem;
 	margin-left: 0.25rem;
 }
 
+.site-footer .icons_link:hover {
+	color: #17252a;
+}
+
 .dark-mode .site-footer .icons_link {
 	color: #feffff;
+}
+
+.dark-mode .site-footer .icons_link:hover {
+	color: #3aafa9;
 }
 
 .site-info {
@@ -2274,6 +2294,9 @@ textarea {
 }
 
 @media screen and (min-width: 38.5em) {
+	.site-footer {
+		position: relative;
+	}
 	.footer-navigation {
 		visibility: hidden;
 	}

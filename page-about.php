@@ -30,21 +30,11 @@ get_header();
 						<article class="about-me">	
 							<?php		
 							if ( function_exists ('get_field') ) :
-			
-				// $image = get_field('hero_image');
-				// 	$size = 'full'; // (thumbnail, medium, large, full or custom size)
-				// 	if( $image ) :
-				// 		echo wp_get_attachment_image( $image, $size );
-				// 	endif;
-		
-
 								if ( get_field( 'about_me_text' ) ) :
 									?>
 									<p><?php the_field('about_me_text'); ?></p>
 									<?php
 								endif;
-					
-							
 							?>
 						</article>
 
@@ -53,8 +43,7 @@ get_header();
 								<nav id="social-navigation" class="social-navigation">
 								<?php wp_nav_menu(array('theme_location' => 'social')); ?>
 								</nav>
-						</article>		
-					
+						</article>						
 				
 						<figure class="about-image">
 								<?php
@@ -79,5 +68,4 @@ get_header();
 	</main><!-- #main -->
 
 <?php
-// get_sidebar();
 get_footer();
